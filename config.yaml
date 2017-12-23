@@ -1,0 +1,12 @@
+baseURL: "http://blog.seangransee.com/"
+languageCode: "en-us"
+title: "Sean Gransee"
+theme: "hyde"
+params:
+  themeColor: "theme-base-08"
+  description: "Software engineer, Northwestern University and hackNY alum, currently at SwipeSense"
+  copyright: " "
+permalinks:
+  posts: /:year/:month/:title/
+googleAnalytics: UA-1016807-11
+disqusShortname: seangransee
