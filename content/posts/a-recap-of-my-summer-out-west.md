@@ -21,7 +21,7 @@ aliases:
 <p>After living in a hostel for a week, I moved into the house where I'd be staying for most of the summer. It was a house in Chinatown with 11 other interns from various companies all over the city. My roommate, Connor, was also an engineer (at Twitter) and we got along really well.</p>
 <p>I won my first game of ping pong at the office. Woohoo! I also got stuck in an elevator when the power went out in the building. Boooo! Good thing that day was followed up with some of the best sushi I've ever eaten at <a href="http://www.sushiinsf.com/">Sushi In</a>.</p>
 <p>That weekend was the pride parade, which was the craziest urban celebration I've ever experienced. I've never seen anything quite like it.</p>
-<p><img alt="image" src="/img/815d64b2c467713222df1f919e6682d34b12222773aab0d1ac6e15419b2c8308.jpg" /><em>Pride parade.</em></p>
+<p><img alt="image" src="/img/815d64b2c467713222df1f919e6682d34b12222773aab0d1ac6e15419b2c8308.jpg" /><br /><em>Pride parade.</em></p>
 <p><strong>Week 3 - 4th of July weekend</strong></p>
 <p>All the eventful stuff here took place during the long weekend. I spent most of 4th of July afternoon at Fort Mason with part of the Ribbon team, and then spent the evening walking along The Embarcadero, looping back to Pier 39 to watch the Fireworks.</p>
 <p>The next day was quite possibly the best day of the summer. My roommates two friends from the University of Michigan were in town, and I joined the three of them (along with another housemate, Steph) as we biked across the Golden Gate Bridge and had dinner in Sausalito. After taking a ferry back to San Francisco, we stopped at Trader Joe's to get a case of Two Buck Chuck. We drank at our house until shortly before midnight, then headed to the bars on Polk St. to ring in my roommate's 21st birthday.</p>
@@ -39,7 +39,7 @@ aliases:
 <p>I finally made the toughest decision of my life. I ultimately decided to ignore most of the advice I had been given and return to school. I still second-guess myself every day, but I'm starting to feel a bit more comfortable with my decision as I get closer to starting my senior year.</p>
 <p>I spent my saturday with my friend Travis driving down Highway 1 (along the coast). We drove down to Santa Cruz, then looped back up to San Francisco.</p>
 <p>That Sunday, I went paint balling down in San Jose with most of the Ribbon team. Then we had some amazing fried chicken at <a href="http://www.bonchonbayarea.com/">Bon Chon Chicken</a> in Sunnyvale. Then ice cream sandwiches at <a href="http://www.creamnation.com/">CREAM</a> in Berkeley. Then <a href="http://www.yelp.com/biz/taqueria-canc%C3%BAn-san-francisco-5">Taqueria Cancun</a> in The Mission. So much food in one day that I couldn't keep it all in. Literally.</p>
-<p><img alt="image" src="/img/b5b95eb407822ddca9caffd08fc8ce9d156a2a4b512a7738670a33d673d3df1a.jpg" /><em>Paintball with the guys from work.</em></p>
+<p><img alt="image" src="/img/b5b95eb407822ddca9caffd08fc8ce9d156a2a4b512a7738670a33d673d3df1a.jpg" /><br /<em>Paintball with the guys from work.</em></p>
 <p></p>
 <p><strong>Week 7 - Salt Lake City</strong></p>
 <p>I discovered an all-you-can-eat sushi restaurant called <a href="http://www.sushi-hunter.com">Sushi Hunter</a> in North Beach. I set a personal record by consuming 55 pieces, and the only reason I stopped was because they were closing. Don't worry, I'll be come back to this later&hellip;</p>
