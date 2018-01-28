@@ -8,25 +8,27 @@ There's a [Black Mirror episode rankings thread](https://www.reddit.com/r/blackm
 
 ## Sorted from best to worst
 
-1. White Christmas
-2. San Junipero
-3. USS Callister
-4. Hang the DJ
-5. Shut Up and Dance
-6. White Bear
-7. The Entire History of You
-8. Nosedive
-9. Black Museum
-10. Be Right Back
-11. Fifteen Million Merits
-11. Hated in the Nation
-13. Playtest
-14. The National Anthem
-15. Arkangel
-16. Crocodile
-17. Men Against Fire
-18. Metalhead
-19. The Waldo Moment
+<ol>
+  <li>White Christmas</li>
+  <li>San Junipero</li>
+  <li>USS Callister</li>
+  <li>Hang the DJ</li>
+  <li>Shut Up and Dance</li>
+  <li>White Bear</li>
+  <li>The Entire History of You</li>
+  <li>Nosedive</li>
+  <li>Black Museum</li>
+  <li>Be Right Back</li>
+  <li>Fifteen Million Merits (tie)</li>
+  <li value="11">Hated in the Nation (tie)</li>
+  <li value="13">Playtest</li>
+  <li>The National Anthem</li>
+  <li>Arkangel</li>
+  <li>Crocodile</li>
+  <li>Men Against Fire</li>
+  <li>Metalhead</li>
+  <li>The Waldo Moment</li>
+</ol>
 
 This takes into account all 44 comments (at the time of this posting) that included a ranked list of all 19 episodes. I excluded comments that only put them into tiers without giving a ranking within each tier. I also excluded comments that only ranked some of the episodes. (Many comments only ranked season 4, so those were excluded.)
 
