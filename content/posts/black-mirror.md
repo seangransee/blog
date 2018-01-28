@@ -32,7 +32,7 @@ This takes into account all 44 comments (at the time of this posting) that inclu
 
 **SPOILER ALERT** The thing I found most interesting about this list is that the top 4 episodes all have a similar premise. They all follow digital copies of human consciousness inside a virtual reality. I've seen a number of people complaining on Reddit about how too many episodes are based on that premise, but it looks like Charlie Brooker decided to take the success of White Christmas and copy the idea of "cookies" into a series of well-regarded installments.
 
-I also wanted to get a sense of how much people agreed on the ranking of each episode, so I also ordered the list by standard deviation.
+I also wanted to get a sense of how much people agreed on the ranking of each episode, so I ordered the list by standard deviation.
 
 ## Sorted from most agreed upon to most polarizing
 
