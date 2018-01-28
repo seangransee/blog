@@ -2,8 +2,17 @@ Site generator for [http://blog.seangransee.com](http://blog.seangransee.com), p
 
 ## Run locally
 
+```bash
+hugo server # hide drafts, just like in production
+hugo server --buildDrafts # show drafts
 ```
-hugo server
+
+Open http://localhost:1313/ in your browser.
+
+## Start new post
+
+```bash
+hugo new posts/post-name.md
 ```
 
 ## Deploy
