@@ -1,5 +1,5 @@
 ---
-title: "All Black Mirror Episodes, ranked by Reddit comments"
+title: "All Black Mirror Episodes, Ranked by Reddit Comments"
 date: 2018-01-27T22:00:24-06:00
 ---
 
