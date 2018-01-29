@@ -3,7 +3,7 @@ title: "All Black Mirror Episodes, Ranked by Reddit Comments"
 date: 2018-01-27T22:00:24-06:00
 ---
 
-There's a [Black Mirror episode rankings thread](https://www.reddit.com/r/blackmirror/comments/7ms2r8/black_mirror_episode_rankings_thread/) where dozens of people have ranked every Black Mirror episode. I thought it would be interesting to average up all the rankings to get a general consensus of people's favorite and least favorite episodes. Without further adieu, here's each episode ordered by its average ranking from that thread:
+There's a [Black Mirror episode rankings thread](https://www.reddit.com/r/blackmirror/comments/7ms2r8/black_mirror_episode_rankings_thread/) where dozens of people have ranked every Black Mirror episode. I thought it would be interesting to average up all the rankings to get a general consensus of people's favorite and least favorite episodes. Without further ado, here's each episode ordered by its average ranking from that thread:
 <!--more-->
 
 ## Sorted from best to worst
