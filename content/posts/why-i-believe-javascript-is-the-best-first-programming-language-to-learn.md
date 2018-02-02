@@ -3,6 +3,7 @@ date: 2012-12-01T21:30:00+00:00
 title: Why I Believe JavaScript is the Best First Programming Language to Learn
 aliases:
   - /post/36978191579/why-i-believe-javascript-is-the-best-first
+  - /post/36978191579/why-i-believe-javascript-is-the-best-first-programming
   - /post/36978191579
 ---
 
