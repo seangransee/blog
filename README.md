@@ -18,3 +18,10 @@ hugo new posts/post-name.md
 ## Deploy
 
 Push to `master`. CircleCI will automatically commit the built site to `gh-pages`.
+
+## Modify CSS
+
+```
+cd themes/hemingway2
+yarn gulp watch
+```
