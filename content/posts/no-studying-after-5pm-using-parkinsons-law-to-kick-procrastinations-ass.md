@@ -3,6 +3,7 @@ date: 2012-11-08T04:57:00+00:00
 title: 'No Studying After 5pm: Using Parkinson''s Law to Kick Procrastination''s Ass'
 aliases:
   - /post/35254966580/no-studying-after-5pm-using-parkinsons-law-to
+  - /post/35254966580/no-studying-after-5pm-using-parkinsons-law-to-kick
   - /post/35254966580
 ---
 
