@@ -8,11 +8,11 @@ disqusShortname: seangransee
 theme: "hemingway2"
 params:
   social:
-    -
-      url: "https://github.com/seangransee"
+    - url: "https://github.com/seangransee"
       fa_icon: "fa-github"
-    -
-      url: "https://twitter.com/seangransee"
+    - url: "https://twitter.com/seangransee"
       fa_icon: "fa-twitter"
     - url: "https://www.instagram.com/seangransee/"
       fa_icon: "fa-instagram"
+    - url: "mailto:sean.gransee@gmail.com"
+      fa_icon: "fa-envelope"
