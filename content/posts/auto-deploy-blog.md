@@ -65,7 +65,7 @@ jobs:
       - checkout
       - run: ./deploy.sh
     branches:
-      - only:
+      only:
         - master
 ```
 
