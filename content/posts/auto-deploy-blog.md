@@ -60,7 +60,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: publysher/hugo
+      - image: cibuilds/hugo:latest
     steps:
       - checkout
       - run: ./deploy.sh
