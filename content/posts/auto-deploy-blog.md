@@ -31,7 +31,8 @@ To clarify, your `master` branch will _only_ contain the source files needed to 
 
 Here's what my script looks like:
 
-```bash
+<pre>
+<code class="language-bash">
 hugo -v # command to build your site
 cd public # cd into folder containing your built site
 
@@ -45,7 +46,8 @@ git commit -m "Deploy from CircleCI" # this will always be the only commit in yo
 
 # use --quiet to avoid printing token in build logs
 git push --force --quiet "https://${GH_TOKEN}@github.com/seangransee/blog.git" master:gh-pages # path to your repo on GitHub, using token for authentication
-```
+</code>
+</pre>
 
 You'll notice that I'm using an environment variable to store my GitHub token to avoid having it publicly available in my repository.
 
@@ -55,7 +57,8 @@ I used CircleCI because it's what I'm most familiar with, but I've also had good
 
 Configure CI to run your deploy script when you push to `master`. I won't go through the details of setting that up, but here's my configuration file using CircleCI and Hugo:
 
-```yaml
+<pre>
+<code class="language-yaml">
 version: 2
 jobs:
   build:
@@ -67,13 +70,14 @@ jobs:
     branches:
       only:
         - master
-```
+</code>
+</pre>
 
 ### Set up a GitHub access token
 
 You'll need to generate a token that will allow your script to push to your branch on GitHub. Go to https://github.com/settings/tokens/ to generate a token, or read [GitHub's instructions](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/) if you need more help. You'll need to give your token **repo** access. Save this token as an environment variable called `GH_TOKEN` on CI.
 
-### Enable `gh-pages`
+### Enable gh-pages
 
 [GitHub has instructions for configuring your repository to use `gh-pages`.](https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages) If you're using a custom domain, you'll also need to [set that up](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/). If you enable a custom domain through the GitHub web interface, it'll automatically create a CNAME file for you. However, this file will get wiped out by the deploy script above unless the script takes care of re-generating the CNAME file on each deploy. I had forgotten to have my script do this at first, and was banging my head against the wall trying to figure out why my custom domain had stopped working each time I deployed.
 

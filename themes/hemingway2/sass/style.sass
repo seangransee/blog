@@ -50,13 +50,6 @@ nav .level
   &.notfound
     font-size: 20vw
 
-code
-  color: inherit
-  background-color: transparent
-  font-size: 90%
-
-
-
 article+article
   margin-top: 80px
 
@@ -68,8 +61,6 @@ article+article
     &::before
       color: #aeb1b5
       font-weight: bold
-    code
-      background-color: #f8f8f8
   h1+h2:not(:first-child),
   h2+h3:not(:first-child),
   h3+h4:not(:first-child),
@@ -101,20 +92,18 @@ article+article
       border: 1px solid #d3d6db
       padding: 8px 10px
       vertical-align: top
-  & > code, p > code
-    font-size: 90%
-    padding: 2px 4px
-    margin: 0 2px
-    border: 1px solid #ddd
-    border-radius: 4px
-    background-color: #f8f8f8
-    color: #42464c
-  pre
-    code
-      font-size: 90%
-      padding: 1em
-      line-height: 1.5
+
   li
     pre,
     table
       margin-bottom: 1.5em
+
+/* ADDED BY SEAN */
+.token
+  all: unset
+
+code
+  font-size: 14px
+
+pre code
+  padding: unset

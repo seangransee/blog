@@ -7,6 +7,10 @@ googleAnalytics: UA-1016807-11
 disqusShortname: seangransee
 theme: "hemingway2"
 params:
+  prism:
+    languages:
+      - bash
+      - yaml
   social:
     - url: "https://github.com/seangransee"
       fa_icon: "fa-github"
