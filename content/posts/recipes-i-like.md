@@ -6,7 +6,8 @@ aliases:
   - /post/66923667876
 ---
 
-<p>I live with four other hungry college students. I've been cooking for them (and friends that occasionally join us) about once a week. Here are some of my favorite recipes, along with some of my personal notes. I will keep adding to this list on an ongoing basis.</p>
+<p>I live with four other hungry college students. I've been cooking for them (and friends that occasionally join us) about once a week. Here are some of my favorite recipes, along with some of my personal notes.</p>
+<!--more-->
 <p></p>
 <p><strong>Swiss Chicken Casserole</strong></p>
 <p>Recipe:&nbsp;<a href="http://allrecipes.com/Recipe/Swiss-Chicken-Casserole-II/Detail.aspx?evt19=1">http://allrecipes.com/Recipe/Swiss-Chicken-Casserole-II/Detail.aspx?evt19=1</a></p>

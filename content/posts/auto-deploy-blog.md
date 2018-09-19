@@ -9,6 +9,8 @@ The easiest way to accomplish this with minimal setup is just to have your site 
 
 This solution was fine at first, but it got a little annoying having to manually re-build my site and commit the output of that build on every change. Not to mention the fact that committing build artifacts to version control broke my heart a little. I wanted a way to keep _only_ my source chances in my git history (with the build folder in `.gitignore`), and have the build and deployment process happen automatically when I pushed my source code to GitHub.
 
+<!--more-->
+
 Here's the process I settled on: **CircleCI kicks off a new build when I push to `master`. This runs a simple bash script that builds my site, commits the result to the `gh-pages` branch, and pushes that branch back to GitHub.** Now I can just push my source changes to `master`, and the rest happens automatically within seconds. As a plus, this script re-writes the history of `gh-pages` to a single commit on each deploy so that branch doesn't get littered with "auto-deploy" commits.
 
 **If you just want to see the code that makes this run, take a look at [the repository for this blog](https://github.com/seangransee/blog) and take note of the `deploy.sh` file.** I should note that this was heavily inspired by the [script](https://github.com/graphql/graphql.github.io/blob/source/resources/publish.sh) that deploys changes to [GraphQL.org](http://graphql.org/). Here's a rundown of how you can set up a similar solution:

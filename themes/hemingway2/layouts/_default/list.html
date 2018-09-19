@@ -13,7 +13,7 @@
           {{ partial "tags" .Params.tags }}
           {{ end }}
           <div class="content">
-            {{ .Summary | plainify | safeHTML }}
+            {{ .Summary | safeHTML }}
             {{ if .Truncated }}
             ...<a class="button is-link" href="{{ .Permalink }}" style="height:28px">
               Read more

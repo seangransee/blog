@@ -11,6 +11,7 @@ params:
     languages:
       - bash
       - yaml
+      - graphql
   social:
     - url: "https://github.com/seangransee"
       fa_icon: "fa-github"
