@@ -432,9 +432,9 @@ Here's a simplified example. Let's say your `User` type has a `name` field, but 
 2. In any of your applications that consume your API and query the `name` field, replace all those references with `fullName`, and deploy your applications.
 3. You can now safely remove the `name` field from your API.
 
-If you don't want to bother with step 2, GraphQL provides a way to [deprecate a field](https://facebook.github.io/graphql/draft/#sec-Field-Deprecation) using the `@deprecated` token. This will make the field continue to function, but it will deter further usage of that field because the field won't show up in GraphiQL's autocomplete and will show up in a different section of the documentation.
+If you don't want to bother with steps 2 and 3, GraphQL provides a way to [deprecate a field](https://facebook.github.io/graphql/draft/#sec-Field-Deprecation) using the `@deprecated` token. This will make the field continue to function, but it will deter further usage of that field because the field won't show up in GraphiQL's autocomplete and will show up in a different section of the documentation.
 
-If your users are directly consuming your API to build their own scripts and applications, it's probably best to avoid breaking changes entirely. That being said, [GitHub sometimes introduces breaking changes](https://developer.github.com/v4/breaking_changes/) to their GraphQL API and they have a process for it.
+If your users are directly consuming your API to build their own scripts and applications, it's probably best to avoid breaking changes entirely. That being said, [GitHub sometimes introduces breaking changes](https://developer.github.com/v4/breaking_changes/) to their GraphQL API and they have a process for handling it.
 
 The good:
 
