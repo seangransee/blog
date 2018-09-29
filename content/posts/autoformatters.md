@@ -9,6 +9,8 @@ Everyone I've worked with agrees that code should follow a consistent style. It'
 
 My world was rocked when my team started using [Prettier](https://prettier.io/). Prettier is an **opinionated code formatter**. It automatically formats your code based on styles that the creators of the tool have decided upon.
 
+<!--more-->
+
 ## Deciding on formatting rules
 
 ESLint has 92 configurable rules for [stylistic issues](https://eslint.org/docs/rules/#stylistic-issues), each with a number of options you can choose from. The number of permutations this provides is an immensely huge number that I don't feel like calculating.
