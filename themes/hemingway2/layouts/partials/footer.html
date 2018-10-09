@@ -9,6 +9,8 @@
 {{ range .Site.Params.prism.languages }}
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-{{ . }}.min.js"></script>
 {{ end }}
+{{ if not .Site.BuildDrafts }}
 {{ if .Site.GoogleAnalytics }}
 {{ template "_internal/google_analytics_async.html" . }}
+{{ end }}
 {{ end }}
