@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="What is a linked list?" property="og:title">
+  <title>What is a linked list?</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">What is a linked list?</h1>
+        <h2 class="subtitle is-6">August 9, 2012</h2>
+        
+        <div class="content">
+          <p><em>This post is from an old blog I had called Software Cake, where I explained technical terms by talking about cake.</em></p>
+
+<hr />
+
+<p>Your city has just begun its annual Cake Tour Extravaganza. As a die-hard cake lover, you couldn’t be more excited for today.</p>
+
+<p>The concept is simple. You can walk into any participating bakery in the city and try some cake. Afterwards, the bakery directs you to the location of another bakery. You can keep following this chain until you get to the end, and hope you don’t get diabetes along the way.</p>
+
+<p>The city doesn’t release the names or locations of any participating bakeries except for one. If you want to go on this cake tour and you don’t have inside information about the participating bakeries, you need to start at the beginning and follow the chain until you’re satisfied.</p>
+
+<p><strong>Let’s put this into technical terms…</strong></p>
+
+<p>A linked list is essentially just a location in the computer’s memory, just like the location of the first bakery. At this location, you have the first item in the list. Right next to it, you have a pointer to the location of the second item. When you follow this pointer you arrive at the second item, and right next to it there is a pointer to the third item. At the very end of the list there is a <em>terminator</em>, which tells the computer that it has reached the end of the list. Fortunately, a computer can move to another location much faster than you can move to another bakery.</p>
+
+<p><strong>Why not just use an array?</strong></p>
+
+<p>That’s a good question. With an array, you can instantly jump to any point in the list. You don’t need to start at the beginning and go through them all, so isn’t that better? Depends on the situation. In an array, all the items are right next to each other in the computer’s memory. That would be like putting 30 bakeries right next to each other on one city block. It’s possible if there is a large vacant piece of real estate, but it’s not always guaranteed that this will be the case. Also, what if you want to put a new bakery in the middle? When they’re all adjacent with each other, you can’t stick a new bakery in the middle. But with the first example, you can instruct the bakery owners to direct customers to a different location if a new bakery joins the party.</p>
+
+<p>Now go out and eat some cake! Did I mention that it’s free today?</p>
+
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

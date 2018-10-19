@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="Singular and Plural Fields in GraphQL" property="og:title">
+  <title>Singular and Plural Fields in GraphQL</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Singular and Plural Fields in GraphQL</h1>
+        <h2 class="subtitle is-6">October 18, 2018</h2>
+        
+        <div class="content">
+          
+
+<p><em>This is part of a series about <a href="/2018/10/decisions-my-team-made-with-our-graphql-schema/">decisions my team made with our GraphQL schema</a>. Check out that post for context, or to read about other decisions we made.</em></p>
+
+<p>Pretty much every API needs to support an access pattern where you need to be able to query for a single <strong>user</strong>, and you also need to query for multiple <strong>users</strong>. (Replace &ldquo;user&rdquo; with any type of data your application models.) I played around with a few ways to handle this, and ended up putting both a singluar and a plural field of the same type at the same level of the schema. The singular field has a required primary key argument and is used to look up a specific record. The plural field returns all records of that type by default, but includes an optional argument that can be used to filter the results. Here&rsquo;s an example with a <code>User</code> type:</p>
+
+<h3 id="schema">Schema</h3>
+
+<pre>
+<code class="language-graphql">
+type User {
+  id: ID!
+  name: String!
+}
+
+type Query {
+  # `id` is a required argument for the singular `user` field,
+  # used to search for a specific user
+  user(id: ID!): User
+
+  # `ids` is an optional array argument for the plural `users` field.
+  # Not providing it will make the API return all users
+  # to which the requester has access.
+  users(ids: [ID!]): [User!]!
+}
+</code>
+</pre>
+
+<h3 id="request">Request</h3>
+
+<pre>
+<code class="language-graphql">
+{
+  user(id: 51) {
+    id
+    name
+  }
+
+  # Note that these next two fields are both the same `users` field,
+  # and I'm just aliasing them to the names `someUsers` and `allUsers`.
+  someUsers: users(ids: [52, 53]) {
+    id
+    name
+  }
+
+  allUsers: users {
+    id
+    name
+  }
+}
+</code>
+</pre>
+
+<h3 id="response">Response</h3>
+
+<pre>
+<code class="language-json">
+{
+  "data": {
+    "user": {
+      "id": "51",
+      "name": "Michael Scott"
+    },
+    "someUsers": [
+      {
+        "id": "52",
+        "name": "Jim Halpert"
+      },
+      {
+        "id": "53",
+        "name": "Pam Beesly"
+      }
+    ],
+    "allUsers": [
+      {
+        "id": "51",
+        "name": "Michael Scott"
+      },
+      {
+        "id": "52",
+        "name": "Jim Halpert"
+      },
+      {
+        "id": "53",
+        "name": "Pam Beesly"
+      },
+      {
+        "id": "54",
+        "name": "Dwight Schrute"
+      }
+    ]
+  }
+}
+</code>
+</pre>
+
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

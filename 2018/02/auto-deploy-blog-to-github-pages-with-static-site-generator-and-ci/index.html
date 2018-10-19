@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="Auto-deploy blog to GitHub Pages with static site generator and CI" property="og:title">
+  <title>Auto-deploy blog to GitHub Pages with static site generator and CI</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Auto-deploy blog to GitHub Pages with static site generator and CI</h1>
+        <h2 class="subtitle is-6">February 1, 2018</h2>
+        
+        <div class="content">
+          <p>A couple weeks ago, I migrated my blog from Tumblr to a static site generator. (I ended up settling on <a href="https://gohugo.io/">Hugo</a>, but my choice of tool is irrelevant for this post.) When it came to deployment, I decided to have the generated HTML live on GitHub Pages since it&rsquo;s free, easy to set up, and my source code (content, theme, and configuration) were going to live there anyway.</p>
+
+<p>The easiest way to accomplish this with minimal setup is just to have your site generator output your built site in a folder called <code>/docs</code>. Rebuild your site after any change you make, push to <code>master</code>, and you&rsquo;re good to go.</p>
+
+<p>This solution was fine at first, but it got a little annoying having to manually re-build my site and commit the output of that build on every change. Not to mention the fact that committing build artifacts to version control broke my heart a little. I wanted a way to keep <em>only</em> my source chances in my git history (with the build folder in <code>.gitignore</code>), and have the build and deployment process happen automatically when I pushed my source code to GitHub.</p>
+
+<p></p>
+
+<p>Here&rsquo;s the process I settled on: <strong>CircleCI kicks off a new build when I push to <code>master</code>. This runs a simple bash script that builds my site, commits the result to the <code>gh-pages</code> branch, and pushes that branch back to GitHub.</strong> Now I can just push my source changes to <code>master</code>, and the rest happens automatically within seconds. As a plus, this script re-writes the history of <code>gh-pages</code> to a single commit on each deploy so that branch doesn&rsquo;t get littered with &ldquo;auto-deploy&rdquo; commits.</p>
+
+<p><strong>If you just want to see the code that makes this run, take a look at <a href="https://github.com/seangransee/blog">the repository for this blog</a> and take note of the <code>deploy.sh</code> file.</strong> I should note that this was heavily inspired by the <a href="https://github.com/graphql/graphql.github.io/blob/source/resources/publish.sh">script</a> that deploys changes to <a href="http://graphql.org/">GraphQL.org</a>. Here&rsquo;s a rundown of how you can set up a similar solution:</p>
+
+<p><em>Note: I used Hugo and CircleCI, but this should work with any static site generator (Jenkins, etc) and CI system (Travis, etc).</em></p>
+
+<h3 id="add-your-build-folder-to-gitignore">Add your build folder to .gitignore</h3>
+
+<p>When I build my site with Hugo, it dumps my built site in a <code>/public</code> folder. The name of this folder will vary depending on which static site generator you&rsquo;re using, and should be configurable. Whatever this folder happens to be, add this to your <code>.gitignore</code> so you don&rsquo;t end up committing build artifacts to your repository.</p>
+
+<h3 id="create-a-deploy-script">Create a deploy script</h3>
+
+<p>The deploy script will need to do the following things:</p>
+
+<ol>
+<li>Build your static site</li>
+<li>Create a CNAME file that will go in your <code>gh-pages</code> branch. (You can skip this if you aren&rsquo;t using a custom domain.)</li>
+<li>Push your build folder (along with the CNAME file) to the root directory of the <code>gh-pages</code> branch of your repository on GitHub.</li>
+</ol>
+
+<p>To clarify, your <code>master</code> branch will <em>only</em> contain the source files needed to build your site, and your auto-deployed <code>gh-pages</code> branch will <em>only</em> contain the generated output. This provides a nice separation of source files and build artifacts.</p>
+
+<p>Here&rsquo;s what my script looks like:</p>
+
+<pre>
+<code class="language-bash">
+hugo -v # command to build your site
+cd public # cd into folder containing your built site
+
+git init
+git config user.name "Sean Gransee"
+git config user.email "sean.gransee@gmail.com"
+
+echo "blog.seangransee.com" > CNAME # domain your site will live at
+git add .
+git commit -m "Deploy from CircleCI" # this will always be the only commit in your gh-pages branch
+
+# use --quiet to avoid printing token in build logs
+git push --force --quiet "https://${GH_TOKEN}@github.com/seangransee/blog.git" master:gh-pages # path to your repo on GitHub, using token for authentication
+</code>
+</pre>
+
+<p>You&rsquo;ll notice that I&rsquo;m using an environment variable to store my GitHub token to avoid having it publicly available in my repository.</p>
+
+<h3 id="set-up-ci">Set up CI</h3>
+
+<p>I used CircleCI because it&rsquo;s what I&rsquo;m most familiar with, but I&rsquo;ve also had good luck with Travis in the past. They&rsquo;re both free for open-source repositories, which makes either service perfect for auto-deploying a blog or static site.</p>
+
+<p>Configure CI to run your deploy script when you push to <code>master</code>. I won&rsquo;t go through the details of setting that up, but here&rsquo;s my configuration file using CircleCI and Hugo:</p>
+
+<pre>
+<code class="language-yaml">
+version: 2
+jobs:
+  build:
+    docker:
+      - image: cibuilds/hugo:latest
+    steps:
+      - checkout
+      - run: ./deploy.sh
+    branches:
+      only:
+        - master
+</code>
+</pre>
+
+<h3 id="set-up-a-github-access-token">Set up a GitHub access token</h3>
+
+<p>You&rsquo;ll need to generate a token that will allow your script to push to your branch on GitHub. Go to <a href="https://github.com/settings/tokens/">https://github.com/settings/tokens/</a> to generate a token, or read <a href="https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/">GitHub&rsquo;s instructions</a> if you need more help. You&rsquo;ll need to give your token <strong>repo</strong> access. Save this token as an environment variable called <code>GH_TOKEN</code> on CI.</p>
+
+<h3 id="enable-gh-pages">Enable gh-pages</h3>
+
+<p><a href="https://help.github.com/articles/configuring-a-publishing-source-for-github-pages/#enabling-github-pages-to-publish-your-site-from-master-or-gh-pages">GitHub has instructions for configuring your repository to use <code>gh-pages</code>.</a> If you&rsquo;re using a custom domain, you&rsquo;ll also need to <a href="https://help.github.com/articles/quick-start-setting-up-a-custom-domain/">set that up</a>. If you enable a custom domain through the GitHub web interface, it&rsquo;ll automatically create a CNAME file for you. However, this file will get wiped out by the deploy script above unless the script takes care of re-generating the CNAME file on each deploy. I had forgotten to have my script do this at first, and was banging my head against the wall trying to figure out why my custom domain had stopped working each time I deployed.</p>
+
+<h3 id="that-s-it">That&rsquo;s it!</h3>
+
+<p>Your static site should be automatically built and deployed within seconds of every push to <code>master</code>. No more mixing source files and build artifacts! Have a muffin to celebrate.</p>
+
+<p>Again, feel free to look at <a href="https://github.com/seangransee/blog">this blog&rsquo;s repository</a> if you want to see it all working together, and don&rsquo;t hesitate to leave a comment or <a href="mailto:sean.gransee@gmail.com">contact me</a> if you need help.</p>
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="Speed Up Your WordPress Site on a Shared Host" property="og:title">
+  <title>Speed Up Your WordPress Site on a Shared Host</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Speed Up Your WordPress Site on a Shared Host</h1>
+        <h2 class="subtitle is-6">March 9, 2012</h2>
+        
+        <div class="content">
+          <p>If you’re serious about your website, <a href="http://www.nytimes.com/2012/03/01/technology/impatient-web-users-flee-slow-loading-sites.html?_r=3" target="_blank">you can’t afford long pageload times</a>. Unfortunately, most of us (myself included) don’t have the cash to drop on a dedicated server and are forced to use cheap, shared hosts that cost less than $150 a year. While these hosts are adequate for serving static content, they don’t do a great job at serving dynamic content from content management systems such as WordPress and Drupal. I was recently tasked with speeding up a site called <a href="http://www.alumtalks.com/" target="_blank">AlumTalks</a>, which runs on WordPress on a shared host. I tested many different plugins and services, and came up with a combination that works really well. Their home page used to take 15 seconds to load according to <a href="http://tools.pingdom.com/fpt/" target="_blank">Pingdom Tools</a>, and it now loads 50-90% faster.</p>&#13;
+<p>Here are 3 tools that you can use in conjunction to speed up your WordPress site on a shared host.</p>&#13;
+<h3>1. <a href="http://www.cloudflare.com/" target="_blank">CloudFlare</a></h3>&#13;
+<div class="fluid-width-video-wrapper"><iframe frameborder="0" id="fitvid565364" src="http://player.vimeo.com/video/14700285?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff"></iframe></div>&#13;
+<p>I’m a huge fan of <a href="http://www.cloudflare.com/" target="_blank">CloudFlare</a> because of the short set-up time and the number of enhancements it provides. It takes about 5 minutes to sign up for an account and activate it, and once that’s done it stays quietly out of the way. It also tries to keep your site online during a server crash, which is a huge benefit.</p>&#13;
+<h3>2. <a href="http://wordpress.org/extend/plugins/wp-super-cache/" target="_blank">WP Super Cache</a></h3>&#13;
+<p>This is my favorite WordPress caching plugin because it’s pretty easy to set up compared to some others and the performance increase is very noticeable. After you install and activate this <a href="http://wordpress.org/extend/plugins/wp-super-cache/" target="_blank">plugin</a>, there are a few steps you should take to maximize its performance.</p>&#13;
+<p><strong>Turn caching on</strong></p>&#13;
+<p>Switch to “Caching On” and click “Update Status”.</p>&#13;
+<p><strong><a href="http://i.imgur.com/E57Sq.png" target="_blank"><img src="http://i.imgur.com/E57Sq.png" width="515" /></a></strong></p>&#13;
+<p><strong>Advanced options</strong></p>&#13;
+<p>Enable the following settings. Don’t forget to click “Update Status”.</p>&#13;
+<p><a href="http://i.imgur.com/fOMIS.png" target="_blank"><img src="http://i.imgur.com/fOMIS.png" width="515" /></a></p>&#13;
+<p>Once you save these settings, scroll down and you’ll see a giant yellow box. At the bottom of the box, click “Update Mod_Rewrite Rules” and the box will turn green.</p>&#13;
+<p><a href="http://i.imgur.com/fjeon.png" target="_blank"><img height="35" src="http://i.imgur.com/fjeon.png" width="196" /></a></p>&#13;
+<p><strong>Enable Preload mode</strong></p>&#13;
+<p>Check the box for “Preload mode” and click “Update Settings”.</p>&#13;
+<p><a href="http://i.imgur.com/k7EKC.png" target="_blank"><img src="http://i.imgur.com/k7EKC.png" width="515" /></a></p>&#13;
+<p>That’s all the configuration you should need for this plugin. If you run into any problems, look at the descriptions of the options and disable some of them until your site is running smoothly. The options above should work on most shared hosts.</p>&#13;
+<h3>3. <a href="http://wordpress.org/extend/plugins/jquery-image-lazy-loading/" target="_blank">jQuery lazy load plugin</a></h3>&#13;
+<p>This is extremely useful for sites with lots of images, since images can be a huge bottleneck when loading a page. This <a href="http://wordpress.org/extend/plugins/jquery-image-lazy-loading/" target="_blank">plugin</a> makes it so that images aren’t loaded until they’re about to enter the viewport so they don’t all need to load when the page first loads. If a user only scrolls halfway through a page, the images on the bottom half are never loaded, saving valuable bandwidth. There is no configuration page for this plugin. Just install it and it works.</p>&#13;
+<h3>Conclusion</h3>&#13;
+<p>That’s it! Your website should now be noticeably faster and use less bandwidth. Now you don’t have to drop hundreds or thousands of dollars so have a well-performing WordPress site.</p>
+
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="What are APIs and why are they important? " property="og:title">
+  <title>What are APIs and why are they important? </title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">What are APIs and why are they important? </h1>
+        <h2 class="subtitle is-6">August 8, 2012</h2>
+        
+        <div class="content">
+          <p><em>This post is from an old blog I had called Software Cake, where I explained technical terms by talking about cake.</em></p>
+
+<hr />
+
+<p>You like cake, right? Of course you do. But you’re not good at making cake.</p>
+
+<p>Your friend (let’s call him the cakemaster) teaches you how to bake the perfect cake. You learn which store to go to, which shelf each ingredient is on, and how to follow the recipe. You now know how to bake the perfect cake.</p>
+
+<p>You start baking yourself a yummy cake every week. One day your friend, the cakemaster, gets eaten by lions. Doesn’t matter though, because your cake is so damn delicious that nothing can bother you. You continue to bake yourself a cake every week for the next few months.</p>
+
+<p>Then one day the store closes. Oh shit! The cakemaster isn’t around to teach you how to bake a cake with ingredients from another store. You can’t make cake any more, and your existence is meaningless.</p>
+
+<p><strong>Now let’s look at another scenario…</strong></p>
+
+<p>You like cake, and your friend is very good at making cake. Every week you ask him for a cake, and he delivers.</p>
+
+<p>Then one day, the store closes down. Not a problem, because your friend is so good at making cake that he can adapt. So he goes to a new store, uses a different recipe with different ingredients, and gives you the same delicious cake.</p>
+
+<p>However, you have no idea that any of this is going on. You just know that every time you ask your friend for a cake, he gives you a cake. You don’t need to know anything about the process of baking a cake, you just need to ask for cake to receive cake.</p>
+
+<p><strong>Let’s put this into technical terms…</strong></p>
+
+<p>You are the user-facing interface for an application. Your friend is the API. The store is the database.</p>
+
+<p>If you’re a mobile app, your code is on a device until a user manually updates you. You can’t simply change on the fly. That’s why you need to be able to just make a request (“I want cake!”) and receive a response (a delicious cake) without any knowledge of how the process works. Databases can change shape, process can be rewritten, and the user-facing part of the app continues to run smoothly.</p>
+
+<p>Even if your code can change on the fly, it’s much easier for a frontend developer to make something happen when he needs no knowledge about how the backend works.</p>
+
+<p>If you want outside developers to be able to integrate your service (think Facebook, Twitter, Instagram, etc.) into theirs, they can safely do so by using your API without needing direct access to your database or any of the inner workings of your system.</p>
+
+<p><em>And that’s why good APIs are important.</em></p>
+
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/10/the-issue-with-graphql-field-names-that-arent-descriptive-enough/</loc>
+    <lastmod>2018-10-18T19:58:30-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/10/breaking-changes-in-graphql-with-zero-downtime/</loc>
+    <lastmod>2018-10-18T19:54:19-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/10/redundant-through-relationships-in-graphql/</loc>
+    <lastmod>2018-10-18T19:53:39-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/10/returning-arrays-in-graphql---simple-lists-vs-relay-style-pagination/</loc>
+    <lastmod>2018-10-18T19:52:14-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/10/singular-and-plural-fields-in-graphql/</loc>
+    <lastmod>2018-10-18T19:50:24-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/10/decisions-my-team-made-with-our-graphql-schema/</loc>
+    <lastmod>2018-10-18T09:12:02-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/09/opinions-on-opinionated-autoformatters/</loc>
+    <lastmod>2018-09-28T19:11:58-05:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/02/auto-deploy-blog-to-github-pages-with-static-site-generator-and-ci/</loc>
+    <lastmod>2018-02-01T19:24:46-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2018/01/all-black-mirror-episodes-ranked-by-reddit-comments/</loc>
+    <lastmod>2018-01-27T22:00:24-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2013/11/recipes-i-like/</loc>
+    <lastmod>2013-11-14T01:28:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2013/09/television-as-a-shared-experience/</loc>
+    <lastmod>2013-09-30T05:29:11+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2013/09/a-recap-of-my-summer-out-west/</loc>
+    <lastmod>2013-09-21T15:29:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2013/08/i-almost-dropped-out-of-school/</loc>
+    <lastmod>2013-08-01T20:20:21+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2013/06/goodbye/</loc>
+    <lastmod>2013-06-14T04:44:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2013/04/people/</loc>
+    <lastmod>2013-04-02T09:35:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/12/the-feedback-bias/</loc>
+    <lastmod>2012-12-03T22:28:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/12/why-i-believe-javascript-is-the-best-first-programming-language-to-learn/</loc>
+    <lastmod>2012-12-01T21:30:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/11/catching-up-with-2012-hackny-fellow-sean-gransee/</loc>
+    <lastmod>2012-11-28T17:09:23+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/11/no-studying-after-5pm-using-parkinsons-law-to-kick-procrastinations-ass/</loc>
+    <lastmod>2012-11-08T04:57:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/10/what-is-the-halting-problem/</loc>
+    <lastmod>2012-10-16T14:31:09-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/10/hackny-summer-series-chris-dixon/</loc>
+    <lastmod>2012-10-08T20:59:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/09/the-real-value-of-college/</loc>
+    <lastmod>2012-09-30T09:06:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/09/the-decisions-behind-wikiloopr/</loc>
+    <lastmod>2012-09-11T04:02:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/09/my-summer-in-hackny/</loc>
+    <lastmod>2012-09-07T14:18:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/09/from-film-major-to-computer-science/</loc>
+    <lastmod>2012-09-06T23:38:19+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/08/what-is-git-what-is-revision/version-control/</loc>
+    <lastmod>2012-08-09T22:23:13-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/08/what-is-a-linked-list/</loc>
+    <lastmod>2012-08-09T09:25:27-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/08/what-are-apis-and-why-are-they-important/</loc>
+    <lastmod>2012-08-08T00:04:31-06:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/03/im-teaching-a-web-design-course-thursday-4/5/</loc>
+    <lastmod>2012-03-29T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/03/getting-closer-to-the-search-bar-in-google/</loc>
+    <lastmod>2012-03-14T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/03/disable-ctrl-f-for-certain-html-elements-or-whole-page/</loc>
+    <lastmod>2012-03-11T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/03/speed-up-your-wordpress-site-on-a-shared-host/</loc>
+    <lastmod>2012-03-09T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/03/how-to-build-an-elegant-one-page-scrolling-website/</loc>
+    <lastmod>2012-03-07T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/02/my-most-rewarding-class/</loc>
+    <lastmod>2012-02-28T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/01/10-reasons-to-become-a-computer-science-major/</loc>
+    <lastmod>2012-01-09T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2012/01/the-danger-of-multitasking/</loc>
+    <lastmod>2012-01-05T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2011/12/goodbye-2011/</loc>
+    <lastmod>2011-12-31T06:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2011/08/my-former-self/</loc>
+    <lastmod>2011-08-22T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2011/08/the-book-of-mormon--a-surprising-stroke-of-genius/</loc>
+    <lastmod>2011-08-15T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/2011/07/so-i-have-a-blog-now.../</loc>
+    <lastmod>2011-07-05T05:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/posts/</loc>
+    <lastmod>2018-10-18T19:58:30-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/</loc>
+    <lastmod>2018-10-18T19:58:30-05:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.seangransee.com/tags/</loc>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

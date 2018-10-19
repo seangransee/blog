@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="Posts" property="og:title">
+  <title>Posts</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/10/the-issue-with-graphql-field-names-that-arent-descriptive-enough/">The Issue With GraphQL Field Names That Aren&#39;t Descriptive Enough</a></h1>
+          <h2 class="subtitle is-6">October 18, 2018</h2>
+          
+          <div class="content">
+            This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+One of the bad decisions we made when building our schema was defining a scalar field with a name that would likely be used in the future by a full object.
+Let&rsquo;s say you&rsquo;re modeling a Building containing multiple Rooms, and you start with a schema like this:
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/10/the-issue-with-graphql-field-names-that-arent-descriptive-enough/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/10/breaking-changes-in-graphql-with-zero-downtime/">Breaking Changes in GraphQL with Zero Downtime</a></h1>
+          <h2 class="subtitle is-6">October 18, 2018</h2>
+          
+          <div class="content">
+            This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+One of the core promises of GraphQL is that you can build an API without versioning or breaking changes. Breaking changes occur when a field gets removed or its return type gets modified. In a perfect world, you&rsquo;d continue adding fields and types as your API evolves without ever needing to remove or modify anything.
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/10/breaking-changes-in-graphql-with-zero-downtime/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/10/redundant-through-relationships-in-graphql/">Redundant &#34;Through&#34; Relationships in GraphQL</a></h1>
+          <h2 class="subtitle is-6">October 18, 2018</h2>
+          
+          <div class="content">
+            This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+Let&rsquo;s say you&rsquo;re modeling the users in a set of companies. Each company has offices scattered across multiple cities, each of which is split into departments that contain a collection of users. It might be tempting to model your schema like this to keep it lean:
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/10/redundant-through-relationships-in-graphql/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/10/returning-arrays-in-graphql---simple-lists-vs-relay-style-pagination/">Returning Arrays in GraphQL - Simple Lists vs Relay-style pagination</a></h1>
+          <h2 class="subtitle is-6">October 18, 2018</h2>
+          
+          <div class="content">
+            This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+For fields that could potentially return a huge set of data, returning the entire result set in an array just doesn&rsquo;t cut it. We have one field that returns time series data scoped to a time range, and that field could potentially return millions of results when scoped to a large enough time range.
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/10/returning-arrays-in-graphql---simple-lists-vs-relay-style-pagination/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/10/singular-and-plural-fields-in-graphql/">Singular and Plural Fields in GraphQL</a></h1>
+          <h2 class="subtitle is-6">October 18, 2018</h2>
+          
+          <div class="content">
+            This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+Pretty much every API needs to support an access pattern where you need to be able to query for a single user, and you also need to query for multiple users. (Replace &ldquo;user&rdquo; with any type of data your application models.
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/10/singular-and-plural-fields-in-graphql/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/10/decisions-my-team-made-with-our-graphql-schema/">Decisions My Team Made With Our GraphQL Schema</a></h1>
+          <h2 class="subtitle is-6">October 18, 2018</h2>
+          
+          <div class="content">
+            I love GraphQL. Since deploying our initial GraphQL API at SwipeSense, the speed at which we&rsquo;ve been able to build new capabilities into our applications has been unparalleled by any REST-based system I&rsquo;ve worked with.
+If I had to pick a downside to adopting GraphQL, I&rsquo;d say it&rsquo;s the newness of the whole ecosystem. The spec is very loose (by design), and it hasn&rsquo;t been around long enough for many best practices to emerge.
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/10/decisions-my-team-made-with-our-graphql-schema/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/09/opinions-on-opinionated-autoformatters/">Opinions On Opinionated Autoformatters</a></h1>
+          <h2 class="subtitle is-6">September 28, 2018</h2>
+          
+          <div class="content">
+            <p>About three years ago, I was involved in the most heated argument I&rsquo;ve experienced thus far in my career. I wish I could say it was about something important with long-term consequences, like a decision about which data store or framework to use. Nope. It was about code formatting. Specifically, the argument was about tabs vs spaces in a spectacle that was a little too similar to a <a href="https://www.youtube.com/watch?v=SsoOG6ZeyUI">scene from Silicon Valley</a>.</p>
+
+<p>Everyone I&rsquo;ve worked with agrees that code should follow a consistent style. It&rsquo;s easy to set up a linter that will fail your CI build when these styles aren&rsquo;t being followed. But standard linters fail to accomplish two things that I&rsquo;ve always viewed as necessary evils when programming with a team: deciding on styles, and following them.</p>
+
+<p>My world was rocked when my team started using <a href="https://prettier.io/">Prettier</a>. Prettier is an <strong>opinionated code formatter</strong>. It automatically formats your code based on styles that the creators of the tool have decided upon.</p>
+
+<p></p>
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/09/opinions-on-opinionated-autoformatters/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/02/auto-deploy-blog-to-github-pages-with-static-site-generator-and-ci/">Auto-deploy blog to GitHub Pages with static site generator and CI</a></h1>
+          <h2 class="subtitle is-6">February 1, 2018</h2>
+          
+          <div class="content">
+            <p>A couple weeks ago, I migrated my blog from Tumblr to a static site generator. (I ended up settling on <a href="https://gohugo.io/">Hugo</a>, but my choice of tool is irrelevant for this post.) When it came to deployment, I decided to have the generated HTML live on GitHub Pages since it&rsquo;s free, easy to set up, and my source code (content, theme, and configuration) were going to live there anyway.</p>
+
+<p>The easiest way to accomplish this with minimal setup is just to have your site generator output your built site in a folder called <code>/docs</code>. Rebuild your site after any change you make, push to <code>master</code>, and you&rsquo;re good to go.</p>
+
+<p>This solution was fine at first, but it got a little annoying having to manually re-build my site and commit the output of that build on every change. Not to mention the fact that committing build artifacts to version control broke my heart a little. I wanted a way to keep <em>only</em> my source chances in my git history (with the build folder in <code>.gitignore</code>), and have the build and deployment process happen automatically when I pushed my source code to GitHub.</p>
+
+<p></p>
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/02/auto-deploy-blog-to-github-pages-with-static-site-generator-and-ci/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2018/01/all-black-mirror-episodes-ranked-by-reddit-comments/">All Black Mirror Episodes, Ranked by Reddit Comments</a></h1>
+          <h2 class="subtitle is-6">January 27, 2018</h2>
+          
+          <div class="content">
+            <p>There&rsquo;s a <a href="https://www.reddit.com/r/blackmirror/comments/7ms2r8/black_mirror_episode_rankings_thread/">Black Mirror episode rankings thread</a> where dozens of people have ranked every Black Mirror episode. I thought it would be interesting to average up all the rankings to get a general consensus of people&rsquo;s favorite and least favorite episodes. Without further ado, here&rsquo;s each episode ordered by its average ranking from that thread:
+</p>
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2018/01/all-black-mirror-episodes-ranked-by-reddit-comments/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+        <article>
+          <h1 class="title"><a href="https://blog.seangransee.com/2013/11/recipes-i-like/">Recipes I Like</a></h1>
+          <h2 class="subtitle is-6">November 14, 2013</h2>
+          
+          <div class="content">
+            <p>I live with four other hungry college students. I've been cooking for them (and friends that occasionally join us) about once a week. Here are some of my favorite recipes, along with some of my personal notes.</p>
+
+<p></p>
+            
+            ...<a class="button is-link" href="https://blog.seangransee.com/2013/11/recipes-i-like/" style="height:28px">
+              Read more
+              <span class="icon is-small">
+                <i class="fa fa-angle-double-right"></i>
+              </span>
+            </a>
+            
+          </div>
+        </article>
+        
+      </div>
+    </section>
+    <section class="section">
+  <div class="container">
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <div class="level-item">
+          
+          <a class="button is-disabled">
+            <span class="icon is-small is-marginless">
+              <i class="fa fa-angle-left"></i>
+            </span>
+            Newer
+          </a>
+          
+        </div>
+      </div>
+      <div class="level-right is-marginless">
+        <div class="level-item">
+          
+          <a class="button" href="/posts/page/2/">
+            Older
+            <span class="icon is-small is-marginless">
+              <i class="fa fa-angle-right"></i>
+            </span>
+          </a>
+          
+        </div>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

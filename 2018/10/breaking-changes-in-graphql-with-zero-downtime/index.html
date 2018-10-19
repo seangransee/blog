@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="Breaking Changes in GraphQL with Zero Downtime" property="og:title">
+  <title>Breaking Changes in GraphQL with Zero Downtime</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Breaking Changes in GraphQL with Zero Downtime</h1>
+        <h2 class="subtitle is-6">October 18, 2018</h2>
+        
+        <div class="content">
+          <p><em>This is part of a series about <a href="/2018/10/decisions-my-team-made-with-our-graphql-schema/">decisions my team made with our GraphQL schema</a>. Check out that post for context, or to read about other decisions we made.</em></p>
+
+<p>One of the core promises of GraphQL is that you can build an API <a href="https://graphql.org/learn/best-practices/#versioning">without versioning or breaking changes</a>. Breaking changes occur when a field gets removed or its return type gets modified. In a perfect world, you&rsquo;d continue adding fields and types as your API evolves without ever needing to remove or modify anything.</p>
+
+<p>In practice, you&rsquo;re going to make mistakes. Your ideas of how you want to use your API will evolve over time, as will the requirements of the applications consuming your data. A decision you made a year ago might not look like such a good idea today.</p>
+
+<p>If you control all the applications that consume your API (i.e. your customers aren&rsquo;t using your API directly to build their own apps), then it&rsquo;s totally possible to make breaking changes to your API without breaking any of your apps.</p>
+
+<p>Here&rsquo;s a simplified example. Let&rsquo;s say your <code>User</code> type has a <code>name</code> field, but you want to rename it to <code>fullName</code>. You have a couple apps that query the <code>name</code> field, so deleting that field will break your apps. Follow this three-step process to rename the field without any downtime:</p>
+
+<ol>
+<li>Add a <em>new</em> <code>fullName</code> field to the API, which resolves to the exact same thing as the <code>name</code> field, and deploy to your API server.</li>
+<li>In any of your applications that consume your API and query the <code>name</code> field, replace all those references with <code>fullName</code>, and deploy your applications.</li>
+<li>You can now safely remove the <code>name</code> field from your API.</li>
+</ol>
+
+<p>If you don&rsquo;t want to bother with steps 2 and 3, GraphQL provides a way to <a href="https://facebook.github.io/graphql/draft/#sec-Field-Deprecation">deprecate a field</a> using the <code>@deprecated</code> token. This will make the field continue to function, but it will deter further usage of that field because the field won&rsquo;t show up in GraphiQL&rsquo;s autocomplete and will show up in a special &ldquo;deprecated&rdquo; section of the documentation.</p>
+
+<p>If your users are directly consuming your API to build their own scripts and applications, it&rsquo;s probably best to avoid breaking changes entirely. That being said, <a href="https://developer.github.com/v4/breaking_changes/">GitHub sometimes introduces breaking changes</a> to their GraphQL API and they have a process for handling it.</p>
+
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="What is the halting problem?" property="og:title">
+  <title>What is the halting problem?</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">What is the halting problem?</h1>
+        <h2 class="subtitle is-6">October 16, 2012</h2>
+        
+        <div class="content">
+          <p><em>This post is from an old blog I had called Software Cake, where I explained technical terms by talking about cake.</em></p>
+
+<hr />
+
+<p>Consider the following situation:</p>
+
+<blockquote>
+<p>There is a delicious cake. Chuck Norris* must jump up and down until the cake is not delicious anymore.</p>
+</blockquote>
+
+<p>Will Chuck Norris ever stop jumping? Let’s look at a few scenarios:</p>
+
+<ol>
+<li>The cake is outdoors. It gets rained on and becomes soggy, therefore it is not delicious anymore. Chuck Norris stops jumping.</li>
+<li>Chuck Norris realizes how stupid this situation is and stops jumping of his own accord because Chuck Norris does what he wants.</li>
+<li>The cake stays delicious forever. Chuck Norris is compliant and continues to jump for all eternity.</li>
+</ol>
+
+<p>We only looked at three scenarios, but there are an infinite amount of things that can happen. As you can see, whether or not Chuck Norris stops jumping relies on a number of different factors. The only way for him to keep jumping forever is if he remains compliant and the cake never stops being delicious. Even though this seems to be a simple situation, it’s actually very complex because there are millions of factors in the world that could make the cake not be delicious anymore. Or Chuck Norris could decide not to comply, causing an <em>error</em>.</p>
+
+<p>So let’s revisit the question: <em>Will Chuck Norris ever stop jumping?</em> The only way to find out is to watch and see for yourself. There’s no way to tell ahead of time whether he’ll ever stop. If you watch him for 51 hours and he continues to jump, can you tell if he will ever stop in the future? No, you can’t.</p>
+
+<p>Translate this situation into a computer program, and our question is a variation of the <a href="https://en.wikipedia.org/wiki/Halting_problem">halting problem</a>: <em>Given a description of an arbitrary computer program, decide whether the program finishes running or continues to run forever.</em></p>
+
+<p>This problem is significant because it cannot be solved. There are many programs where, when given a description of the program, there is no way to determine whether it will ever stop or whether it will run forever. The Chuck Norris/cake example is one such program. Given that situation, you can’t always tell ahead of time whether his jumping will ever cease.</p>
+
+<p><em>* Chuck Norris was used in this example because he does not need to eat or sleep, and he has enough willpower to not immediately eat the cake.</em></p>
+
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

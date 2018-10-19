@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Sean Gransee</title>
+    <link>https://blog.seangransee.com/posts/</link>
+    <description>Recent content in Posts on Sean Gransee</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 18 Oct 2018 19:58:30 -0500</lastBuildDate>
+    
+	<atom:link href="https://blog.seangransee.com/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The Issue With GraphQL Field Names That Aren&#39;t Descriptive Enough</title>
+      <link>https://blog.seangransee.com/2018/10/the-issue-with-graphql-field-names-that-arent-descriptive-enough/</link>
+      <pubDate>Thu, 18 Oct 2018 19:58:30 -0500</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/10/the-issue-with-graphql-field-names-that-arent-descriptive-enough/</guid>
+      <description>This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+One of the bad decisions we made when building our schema was defining a scalar field with a name that would likely be used in the future by a full object.
+Let&amp;rsquo;s say you&amp;rsquo;re modeling a Building containing multiple Rooms, and you start with a schema like this:</description>
+    </item>
+    
+    <item>
+      <title>Breaking Changes in GraphQL with Zero Downtime</title>
+      <link>https://blog.seangransee.com/2018/10/breaking-changes-in-graphql-with-zero-downtime/</link>
+      <pubDate>Thu, 18 Oct 2018 19:54:19 -0500</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/10/breaking-changes-in-graphql-with-zero-downtime/</guid>
+      <description>This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+One of the core promises of GraphQL is that you can build an API without versioning or breaking changes. Breaking changes occur when a field gets removed or its return type gets modified. In a perfect world, you&amp;rsquo;d continue adding fields and types as your API evolves without ever needing to remove or modify anything.</description>
+    </item>
+    
+    <item>
+      <title>Redundant &#34;Through&#34; Relationships in GraphQL</title>
+      <link>https://blog.seangransee.com/2018/10/redundant-through-relationships-in-graphql/</link>
+      <pubDate>Thu, 18 Oct 2018 19:53:39 -0500</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/10/redundant-through-relationships-in-graphql/</guid>
+      <description>This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+Let&amp;rsquo;s say you&amp;rsquo;re modeling the users in a set of companies. Each company has offices scattered across multiple cities, each of which is split into departments that contain a collection of users. It might be tempting to model your schema like this to keep it lean:</description>
+    </item>
+    
+    <item>
+      <title>Returning Arrays in GraphQL - Simple Lists vs Relay-style pagination</title>
+      <link>https://blog.seangransee.com/2018/10/returning-arrays-in-graphql---simple-lists-vs-relay-style-pagination/</link>
+      <pubDate>Thu, 18 Oct 2018 19:52:14 -0500</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/10/returning-arrays-in-graphql---simple-lists-vs-relay-style-pagination/</guid>
+      <description>This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+For fields that could potentially return a huge set of data, returning the entire result set in an array just doesn&amp;rsquo;t cut it. We have one field that returns time series data scoped to a time range, and that field could potentially return millions of results when scoped to a large enough time range.</description>
+    </item>
+    
+    <item>
+      <title>Singular and Plural Fields in GraphQL</title>
+      <link>https://blog.seangransee.com/2018/10/singular-and-plural-fields-in-graphql/</link>
+      <pubDate>Thu, 18 Oct 2018 19:50:24 -0500</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/10/singular-and-plural-fields-in-graphql/</guid>
+      <description>This is part of a series about decisions my team made with our GraphQL schema. Check out that post for context, or to read about other decisions we made.
+Pretty much every API needs to support an access pattern where you need to be able to query for a single user, and you also need to query for multiple users. (Replace &amp;ldquo;user&amp;rdquo; with any type of data your application models.</description>
+    </item>
+    
+    <item>
+      <title>Decisions My Team Made With Our GraphQL Schema</title>
+      <link>https://blog.seangransee.com/2018/10/decisions-my-team-made-with-our-graphql-schema/</link>
+      <pubDate>Thu, 18 Oct 2018 09:12:02 -0500</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/10/decisions-my-team-made-with-our-graphql-schema/</guid>
+      <description>I love GraphQL. Since deploying our initial GraphQL API at SwipeSense, the speed at which we&amp;rsquo;ve been able to build new capabilities into our applications has been unparalleled by any REST-based system I&amp;rsquo;ve worked with.
+If I had to pick a downside to adopting GraphQL, I&amp;rsquo;d say it&amp;rsquo;s the newness of the whole ecosystem. The spec is very loose (by design), and it hasn&amp;rsquo;t been around long enough for many best practices to emerge.</description>
+    </item>
+    
+    <item>
+      <title>Opinions On Opinionated Autoformatters</title>
+      <link>https://blog.seangransee.com/2018/09/opinions-on-opinionated-autoformatters/</link>
+      <pubDate>Fri, 28 Sep 2018 19:11:58 -0500</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/09/opinions-on-opinionated-autoformatters/</guid>
+      <description>&lt;p&gt;About three years ago, I was involved in the most heated argument I&amp;rsquo;ve experienced thus far in my career. I wish I could say it was about something important with long-term consequences, like a decision about which data store or framework to use. Nope. It was about code formatting. Specifically, the argument was about tabs vs spaces in a spectacle that was a little too similar to a &lt;a href=&#34;https://www.youtube.com/watch?v=SsoOG6ZeyUI&#34;&gt;scene from Silicon Valley&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Everyone I&amp;rsquo;ve worked with agrees that code should follow a consistent style. It&amp;rsquo;s easy to set up a linter that will fail your CI build when these styles aren&amp;rsquo;t being followed. But standard linters fail to accomplish two things that I&amp;rsquo;ve always viewed as necessary evils when programming with a team: deciding on styles, and following them.&lt;/p&gt;
+
+&lt;p&gt;My world was rocked when my team started using &lt;a href=&#34;https://prettier.io/&#34;&gt;Prettier&lt;/a&gt;. Prettier is an &lt;strong&gt;opinionated code formatter&lt;/strong&gt;. It automatically formats your code based on styles that the creators of the tool have decided upon.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Auto-deploy blog to GitHub Pages with static site generator and CI</title>
+      <link>https://blog.seangransee.com/2018/02/auto-deploy-blog-to-github-pages-with-static-site-generator-and-ci/</link>
+      <pubDate>Thu, 01 Feb 2018 19:24:46 -0600</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/02/auto-deploy-blog-to-github-pages-with-static-site-generator-and-ci/</guid>
+      <description>&lt;p&gt;A couple weeks ago, I migrated my blog from Tumblr to a static site generator. (I ended up settling on &lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;, but my choice of tool is irrelevant for this post.) When it came to deployment, I decided to have the generated HTML live on GitHub Pages since it&amp;rsquo;s free, easy to set up, and my source code (content, theme, and configuration) were going to live there anyway.&lt;/p&gt;
+
+&lt;p&gt;The easiest way to accomplish this with minimal setup is just to have your site generator output your built site in a folder called &lt;code&gt;/docs&lt;/code&gt;. Rebuild your site after any change you make, push to &lt;code&gt;master&lt;/code&gt;, and you&amp;rsquo;re good to go.&lt;/p&gt;
+
+&lt;p&gt;This solution was fine at first, but it got a little annoying having to manually re-build my site and commit the output of that build on every change. Not to mention the fact that committing build artifacts to version control broke my heart a little. I wanted a way to keep &lt;em&gt;only&lt;/em&gt; my source chances in my git history (with the build folder in &lt;code&gt;.gitignore&lt;/code&gt;), and have the build and deployment process happen automatically when I pushed my source code to GitHub.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>All Black Mirror Episodes, Ranked by Reddit Comments</title>
+      <link>https://blog.seangransee.com/2018/01/all-black-mirror-episodes-ranked-by-reddit-comments/</link>
+      <pubDate>Sat, 27 Jan 2018 22:00:24 -0600</pubDate>
+      
+      <guid>https://blog.seangransee.com/2018/01/all-black-mirror-episodes-ranked-by-reddit-comments/</guid>
+      <description>&lt;p&gt;There&amp;rsquo;s a &lt;a href=&#34;https://www.reddit.com/r/blackmirror/comments/7ms2r8/black_mirror_episode_rankings_thread/&#34;&gt;Black Mirror episode rankings thread&lt;/a&gt; where dozens of people have ranked every Black Mirror episode. I thought it would be interesting to average up all the rankings to get a general consensus of people&amp;rsquo;s favorite and least favorite episodes. Without further ado, here&amp;rsquo;s each episode ordered by its average ranking from that thread:
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Recipes I Like</title>
+      <link>https://blog.seangransee.com/2013/11/recipes-i-like/</link>
+      <pubDate>Thu, 14 Nov 2013 01:28:23 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2013/11/recipes-i-like/</guid>
+      <description>&lt;p&gt;I live with four other hungry college students. I&#39;ve been cooking for them (and friends that occasionally join us) about once a week. Here are some of my favorite recipes, along with some of my personal notes.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Television As A Shared Experience</title>
+      <link>https://blog.seangransee.com/2013/09/television-as-a-shared-experience/</link>
+      <pubDate>Mon, 30 Sep 2013 05:29:11 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2013/09/television-as-a-shared-experience/</guid>
+      <description>This post might seem like it&#39;s about Breaking Bad, but it&#39;s really about television as an art form. There are no spoilers until the end where it&#39;s clearly marked, so most of this post is safe for anyone to read.
+I haven&#39;t felt this way in 6 years, 2 months, and 8 days.
+I remember the weeks leading up to July 21, 2007. All the theories. All the speculation. Who will live?</description>
+    </item>
+    
+    <item>
+      <title>A Recap Of My Summer Out West</title>
+      <link>https://blog.seangransee.com/2013/09/a-recap-of-my-summer-out-west/</link>
+      <pubDate>Sat, 21 Sep 2013 15:29:26 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2013/09/a-recap-of-my-summer-out-west/</guid>
+      <description>I wrote this on a plane a couple days ago but forgot to post it until now. Enjoy!
+The greatest adventure of my life thus far has come to an end. And with nothing to do for a couple hours in an airplane on its way to Chicago, I&#39;m going to attempt to distill the most amazing thirteen and a half weeks of my life into one blog post. Here we go&amp;hellip;</description>
+    </item>
+    
+    <item>
+      <title>I Almost Dropped Out Of School</title>
+      <link>https://blog.seangransee.com/2013/08/i-almost-dropped-out-of-school/</link>
+      <pubDate>Thu, 01 Aug 2013 20:20:21 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2013/08/i-almost-dropped-out-of-school/</guid>
+      <description>I just made the biggest decision of my life thus far.
+Sure, there are decisions I&#39;ve made that seemed like big ones at the time. But they weren&#39;t. Where to go to college? That wasn&#39;t a decision. My dream school was the first one I got accepted into, so the choice was clear. What to study? There was only one career that I wanted to pursue at the time, so that wasn&#39;t much of a decision either.</description>
+    </item>
+    
+    <item>
+      <title>Goodbye</title>
+      <link>https://blog.seangransee.com/2013/06/goodbye/</link>
+      <pubDate>Fri, 14 Jun 2013 04:44:59 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2013/06/goodbye/</guid>
+      <description>I don&#39;t think I&#39;ve ever truly said goodbye before.
+Sure, I&#39;ve said plenty of goodbyes in the past. But none like this. None of the others felt as real as this. Or as sudden.
+I guess the first time I had to say goodbye to people was right before going to college. Goodbye to all my high school friends. But that was more of a &#34;see ya later&#34; to anyone I really cared about.</description>
+    </item>
+    
+    <item>
+      <title>People</title>
+      <link>https://blog.seangransee.com/2013/04/people/</link>
+      <pubDate>Tue, 02 Apr 2013 09:35:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2013/04/people/</guid>
+      <description>This is the broadest subject I could possibly write about. I&amp;#8217;m not going to attempt to do it justice. Instead, I&amp;#8217;m going to reflect on a very special night.
+This night wasn&amp;#8217;t particularly memorable. Nothing spectacular happened. But it involved a lot of people, which is what made it special. Not any more special than countless other nights involving lots of people, but special nonetheless.
+It started after a week of near-isolation.</description>
+    </item>
+    
+    <item>
+      <title>The Feedback Bias</title>
+      <link>https://blog.seangransee.com/2012/12/the-feedback-bias/</link>
+      <pubDate>Mon, 03 Dec 2012 22:28:53 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/12/the-feedback-bias/</guid>
+      <description>I know I&amp;#8217;m not a fantastic writer. But if I actually paid attention to all the feedback I hear about my writing, I&amp;#8217;d totally think I am.
+In an personal, informal setting, most feedback is crap. It&amp;#8217;s heavily biased to be positive towards the receiver. Most people want to make others feel good about the work they do. While this isn&amp;#8217;t a bad thing by any means, it&amp;#8217;s definitely something to be aware of.</description>
+    </item>
+    
+    <item>
+      <title>Why I Believe JavaScript is the Best First Programming Language to Learn</title>
+      <link>https://blog.seangransee.com/2012/12/why-i-believe-javascript-is-the-best-first-programming-language-to-learn/</link>
+      <pubDate>Sat, 01 Dec 2012 21:30:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/12/why-i-believe-javascript-is-the-best-first-programming-language-to-learn/</guid>
+      <description>If you&#39;ve never programmed before and want to start building that skill, I think JavaScript is the best place to start. I&#39;m not claiming this to be the absolute truth, since it really depends on why you want to start and what you want to do with your programming skills. These are just my opinions and reasons why I believe JavaScript the best place to start for the average person who wants to start coding.</description>
+    </item>
+    
+    <item>
+      <title>Catching up with 2012 hackNY Fellow Sean Gransee</title>
+      <link>https://blog.seangransee.com/2012/11/catching-up-with-2012-hackny-fellow-sean-gransee/</link>
+      <pubDate>Wed, 28 Nov 2012 17:09:23 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/11/catching-up-with-2012-hackny-fellow-sean-gransee/</guid>
+      <description>I wasn’t always a hacker.
+&amp;#13; There are some people who have always had it in them. Programmer by age 12. Software development internships in high school. A moderately successful business under their belt halfway through college.
+&amp;#13; I am not one of those people. I wasn’t a programmer in high school. Not even at the start of college. In fact, I went through my first year of college as a film major.</description>
+    </item>
+    
+    <item>
+      <title>No Studying After 5pm: Using Parkinson&#39;s Law to Kick Procrastination&#39;s Ass</title>
+      <link>https://blog.seangransee.com/2012/11/no-studying-after-5pm-using-parkinsons-law-to-kick-procrastinations-ass/</link>
+      <pubDate>Thu, 08 Nov 2012 04:57:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/11/no-studying-after-5pm-using-parkinsons-law-to-kick-procrastinations-ass/</guid>
+      <description>I&#39;ve recently made four lifestyle changes that have allowed me to get more done and put much more effort into everything I do, all while feeling great with very little stress.
+&amp;#13; I sleep 8 hours a day&amp;#13; I work out for an hour every weekday&amp;#13; I hide all clocks while I&#39;m working&amp;#13; I don&#39;t do anything related to academics on Saturdays and past 5pm on weekdays&amp;#13; My main focus of this post is the last two, but I&#39;ll briefly address the first two because I think they&#39;re very important.</description>
+    </item>
+    
+    <item>
+      <title>What is the halting problem?</title>
+      <link>https://blog.seangransee.com/2012/10/what-is-the-halting-problem/</link>
+      <pubDate>Tue, 16 Oct 2012 14:31:09 -0600</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/10/what-is-the-halting-problem/</guid>
+      <description>This post is from an old blog I had called Software Cake, where I explained technical terms by talking about cake.
+Consider the following situation:
+ There is a delicious cake. Chuck Norris* must jump up and down until the cake is not delicious anymore.
+ Will Chuck Norris ever stop jumping? Let’s look at a few scenarios:
+ The cake is outdoors. It gets rained on and becomes soggy, therefore it is not delicious anymore.</description>
+    </item>
+    
+    <item>
+      <title>hackNY Summer Series: Chris Dixon</title>
+      <link>https://blog.seangransee.com/2012/10/hackny-summer-series-chris-dixon/</link>
+      <pubDate>Mon, 08 Oct 2012 20:59:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/10/hackny-summer-series-chris-dixon/</guid>
+      <description>&amp;#13; The world isn’t run on ideas alone. Having a world-changing idea is great, but many big ideas are essentially worthless without proper execution. During one evening of the hackNY summer series, the 2012 Fellows got down to business with Chris Dixon. Chris is the co-founder of Siteadvisor (acquired by McAfee) and Hunch (acquired by eBay), as well as an angel investor. In this candid discussion about the business side of tech startups, Chris talked about the successes and failures he’s seen in the startup scene and gave us many tips for turning our dream business ideas into a reality.</description>
+    </item>
+    
+    <item>
+      <title>The Real Value of College</title>
+      <link>https://blog.seangransee.com/2012/09/the-real-value-of-college/</link>
+      <pubDate>Sun, 30 Sep 2012 09:06:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/09/the-real-value-of-college/</guid>
+      <description>A professor recently described his attendance policy like this:
+&amp;#13; &amp;#13; Attendance isn&#39;t required. However, if you don&#39;t show up to class you&#39;re losing a lot of money. Here&#39;s your yearly tuition. Now let&#39;s divide that by the number of classes a typical student takes in a year and then by the number of lectures this course has. One hundred dollars. You&#39;re losing $100 for every hour you don&#39;t show up to class.</description>
+    </item>
+    
+    <item>
+      <title>The Decisions Behind WikiLoopr</title>
+      <link>https://blog.seangransee.com/2012/09/the-decisions-behind-wikiloopr/</link>
+      <pubDate>Tue, 11 Sep 2012 04:02:05 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/09/the-decisions-behind-wikiloopr/</guid>
+      <description>A couple weeks ago, I created a website called WikiLoopr. Hours after it went live, the site exploded on Hacker News, made its way around Reddit and Twitter, and got featured in an NBC News tech blog. Those first 24 hours brought in over 40,000 hits to the site.
+The site went live on the same day that I came up with the idea. Plus, I&amp;#8217;ve never paid a dime for hosting.</description>
+    </item>
+    
+    <item>
+      <title>My summer in hackNY</title>
+      <link>https://blog.seangransee.com/2012/09/my-summer-in-hackny/</link>
+      <pubDate>Fri, 07 Sep 2012 14:18:59 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/09/my-summer-in-hackny/</guid>
+      <description>Whenever someone asks me how my summer was, I usually start rambling on and on, unable to contain my excitement. This is my first attempt to finally put my thoughts about this past summer into coherent sentences.
+I&amp;#8217;ll start with an analogy. Since a lot of my friends outside tech are very familiar with theatre, I&amp;#8217;ll use that as the basis of my analogy.
+Imagine being an aspiring actor. Someone gives you the opportunity to live in New York City on the same floor as 30 other aspiring actors without paying a dime.</description>
+    </item>
+    
+    <item>
+      <title>From film major to computer science</title>
+      <link>https://blog.seangransee.com/2012/09/from-film-major-to-computer-science/</link>
+      <pubDate>Thu, 06 Sep 2012 23:38:19 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/09/from-film-major-to-computer-science/</guid>
+      <description>During my two years of college, I&#39;ve spent one year as a film major and one year as a computer science major. Computer science is without a doubt the one I’ve found to be easier and less time consuming.
+&amp;#13; Most people who hear this think I’m crazy. At my university, the school of communication (which includes film majors) is stereotypically the one where students get to slack off and have obnoxious amounts of free time.</description>
+    </item>
+    
+    <item>
+      <title>What is Git? What is revision/version control? </title>
+      <link>https://blog.seangransee.com/2012/08/what-is-git-what-is-revision/version-control/</link>
+      <pubDate>Thu, 09 Aug 2012 22:23:13 -0600</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/08/what-is-git-what-is-revision/version-control/</guid>
+      <description>This post is from an old blog I had called Software Cake, where I explained technical terms by talking about cake.
+You and your team of oompa loompas are on a mission to create the greatest cake the world has ever tasted. You all have your own specialty. Stroompa is an expert at creating sweet, delicious strawberry toppings. Boompa ain’t messing around when it comes to cake batter. And choompa? Well, let’s just say that chocolate is kinda his thing.</description>
+    </item>
+    
+    <item>
+      <title>What is a linked list?</title>
+      <link>https://blog.seangransee.com/2012/08/what-is-a-linked-list/</link>
+      <pubDate>Thu, 09 Aug 2012 09:25:27 -0600</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/08/what-is-a-linked-list/</guid>
+      <description>This post is from an old blog I had called Software Cake, where I explained technical terms by talking about cake.
+Your city has just begun its annual Cake Tour Extravaganza. As a die-hard cake lover, you couldn’t be more excited for today.
+The concept is simple. You can walk into any participating bakery in the city and try some cake. Afterwards, the bakery directs you to the location of another bakery.</description>
+    </item>
+    
+    <item>
+      <title>What are APIs and why are they important? </title>
+      <link>https://blog.seangransee.com/2012/08/what-are-apis-and-why-are-they-important/</link>
+      <pubDate>Wed, 08 Aug 2012 00:04:31 -0600</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/08/what-are-apis-and-why-are-they-important/</guid>
+      <description>This post is from an old blog I had called Software Cake, where I explained technical terms by talking about cake.
+You like cake, right? Of course you do. But you’re not good at making cake.
+Your friend (let’s call him the cakemaster) teaches you how to bake the perfect cake. You learn which store to go to, which shelf each ingredient is on, and how to follow the recipe. You now know how to bake the perfect cake.</description>
+    </item>
+    
+    <item>
+      <title>I’m teaching a web design course Thursday 4/5</title>
+      <link>https://blog.seangransee.com/2012/03/im-teaching-a-web-design-course-thursday-4/5/</link>
+      <pubDate>Thu, 29 Mar 2012 05:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/03/im-teaching-a-web-design-course-thursday-4/5/</guid>
+      <description>UPDATE: Here’s a link to a video of the course.
+http://www.youtube.com/watch?v=bw4gdy0Y5jk
+&amp;#13; Anyone at Northwestern is welcome to come to this…
+&amp;#13;</description>
+    </item>
+    
+    <item>
+      <title>Getting Closer to the Search Bar in Google</title>
+      <link>https://blog.seangransee.com/2012/03/getting-closer-to-the-search-bar-in-google/</link>
+      <pubDate>Wed, 14 Mar 2012 05:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/03/getting-closer-to-the-search-bar-in-google/</guid>
+      <description>Nothing mind-boggling about this. Just an observation I made tonight….
+&amp;#13; Back in the day, getting an answer to a simple question in Google required the following steps:
+&amp;#13; Type query&amp;#13; Click ‘Search’&amp;#13; Scan results&amp;#13; Click best result&amp;#13; Find answer
+(sometimes the answer is in the results, making 4 and 5 unnecessary)&amp;#13; Question: What date did Facebook launch?
+Answer: February 4, 2004
+&amp;#13; 
+&amp;#13; Then Google started giving answers above the search results, eliminating the need for you to leave the page or even look at the results.</description>
+    </item>
+    
+    <item>
+      <title>Disable CTRL&#43;F for Certain HTML Elements or Whole Page</title>
+      <link>https://blog.seangransee.com/2012/03/disable-ctrl-f-for-certain-html-elements-or-whole-page/</link>
+      <pubDate>Sun, 11 Mar 2012 06:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/03/disable-ctrl-f-for-certain-html-elements-or-whole-page/</guid>
+      <description>I plan on creating a web-based game where using CTRL+F to search for text on a page would be cheating. To stop this from happening, I created a jQuery plugin that stops certain HTML elements from being searched.
+&amp;#13; View the source code to use it in your own project, and check out the demo to see it in action.
+&amp;#13; How to use:&amp;#13; Include jQuery and disableFind.js.
+&amp;#13; Call the disableFind() function on the element(s) you want to make unsearchable.</description>
+    </item>
+    
+    <item>
+      <title>Speed Up Your WordPress Site on a Shared Host</title>
+      <link>https://blog.seangransee.com/2012/03/speed-up-your-wordpress-site-on-a-shared-host/</link>
+      <pubDate>Fri, 09 Mar 2012 06:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/03/speed-up-your-wordpress-site-on-a-shared-host/</guid>
+      <description>If you’re serious about your website, you can’t afford long pageload times. Unfortunately, most of us (myself included) don’t have the cash to drop on a dedicated server and are forced to use cheap, shared hosts that cost less than $150 a year. While these hosts are adequate for serving static content, they don’t do a great job at serving dynamic content from content management systems such as WordPress and Drupal.</description>
+    </item>
+    
+    <item>
+      <title>How to Build an Elegant One-page Scrolling Website</title>
+      <link>https://blog.seangransee.com/2012/03/how-to-build-an-elegant-one-page-scrolling-website/</link>
+      <pubDate>Wed, 07 Mar 2012 06:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/03/how-to-build-an-elegant-one-page-scrolling-website/</guid>
+      <description>For my latest website, I decided to try something a little different. I wanted to take a stab at a single page design with multiple sections. I&amp;rsquo;ve seen it done a few times before, but the style isn&amp;rsquo;t even close to being commonplace.
+There are a couple advantages to having a one-page website. First of all, it loads very quickly. Since you don&amp;rsquo;t have to deal with a CMS or a database you can get away with just having one HTML file, one CSS file, and one Javascript file.</description>
+    </item>
+    
+    <item>
+      <title>My Most Rewarding Class</title>
+      <link>https://blog.seangransee.com/2012/02/my-most-rewarding-class/</link>
+      <pubDate>Tue, 28 Feb 2012 06:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/02/my-most-rewarding-class/</guid>
+      <description>There are a few different types of classes in college. First, there are the classes in my major that are directly relevant to my field of study. Second, there are classes that are fun and interesting, but completely optional. And then there’s a third kind: required classes that don’t necessarily relate to anything I’m studying, usually called gen eds.
+&amp;#13; The latter category is the most frustrating. These are the classes where I usually feel like I’m not having fun or learning anything useful.</description>
+    </item>
+    
+    <item>
+      <title>10 Reasons to Become a Computer Science Major</title>
+      <link>https://blog.seangransee.com/2012/01/10-reasons-to-become-a-computer-science-major/</link>
+      <pubDate>Mon, 09 Jan 2012 06:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/01/10-reasons-to-become-a-computer-science-major/</guid>
+      <description>1. Practice on your own
+&amp;#13; To get started, all you need is a computer with internet access, which you likely already have if you’re a college student. You don’t need to work with anybody or practice on anybody. You can start projects and build up valuable experience on your own time.
+&amp;#13; 2. Logical thinking
+&amp;#13; Computer science is all about thinking logically. Enough practice in the field can move you to make more rational decisions in day-to-day life.</description>
+    </item>
+    
+    <item>
+      <title>The danger of multitasking</title>
+      <link>https://blog.seangransee.com/2012/01/the-danger-of-multitasking/</link>
+      <pubDate>Thu, 05 Jan 2012 06:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2012/01/the-danger-of-multitasking/</guid>
+      <description>I have a lot of stuff to do. I’m taking a full load of classes, working a couple jobs, serving on a few exec boards, and I have obligations to my friends. People are always contacting me via email, Facebook, and text message giving me new tasks every day. So it makes sense to always stay connected and tackle multiple tasks at once, right?
+&amp;#13; Wrong!
+&amp;#13; I went along with this mindset for most of last year.</description>
+    </item>
+    
+    <item>
+      <title>Goodbye 2011</title>
+      <link>https://blog.seangransee.com/2011/12/goodbye-2011/</link>
+      <pubDate>Sat, 31 Dec 2011 06:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2011/12/goodbye-2011/</guid>
+      <description>Some years have had really big moments. Moments that hugely influenced my life, for better or worse, and suddenly changed who I am and how I see the world. Leaving a school that I hated going to for 10 years (2006). My dad’s death (2008). Going to college (2010).
+&amp;#13; Which brings us to 2011, a year with so many life-changing moments, I barely know where to begin. I’ll attempt to go through this year’s biggest moments and bring you up to speed on how I got to where I am today.</description>
+    </item>
+    
+    <item>
+      <title>My former self</title>
+      <link>https://blog.seangransee.com/2011/08/my-former-self/</link>
+      <pubDate>Mon, 22 Aug 2011 05:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2011/08/my-former-self/</guid>
+      <description>Something very peculiar just happened. Something that invoked a feeling so strange that I don’t know if I’ll be able to properly put it into words. So here I am, lying in bed in the dead of night, trying to capture this moment on my phone, because I feel like changing my position might make it slip away.
+&amp;#13; It happened shortly after I went to bed. I got a text from a friend, and replied with something about how I can’t do anything tonight because I have to go to work tomorrow.</description>
+    </item>
+    
+    <item>
+      <title>The Book of Mormon – a surprising stroke of genius</title>
+      <link>https://blog.seangransee.com/2011/08/the-book-of-mormon--a-surprising-stroke-of-genius/</link>
+      <pubDate>Mon, 15 Aug 2011 05:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2011/08/the-book-of-mormon--a-surprising-stroke-of-genius/</guid>
+      <description>I’m in love… with a musical. The most unexpected, obscene, blasphemous, sweet, heartwarming, clever, and hilarious musical I’ve ever listened to. That’s right… I haven’t evenseen this show yet, but the broadway cast recording is enough to inspire me to blog about it.
+&amp;#13; It’s called The Book of Mormon, and I find the story fascinating – not just the show’s plot, but the story surrounding the production. For one, it’s Trey Parker and Matt Stone’s first venture into the world of musical theatre – two men who spent their entire career in animated television and film.</description>
+    </item>
+    
+    <item>
+      <title>So I have a blog now...</title>
+      <link>https://blog.seangransee.com/2011/07/so-i-have-a-blog-now.../</link>
+      <pubDate>Tue, 05 Jul 2011 05:00:00 +0000</pubDate>
+      
+      <guid>https://blog.seangransee.com/2011/07/so-i-have-a-blog-now.../</guid>
+      <description>After years of procrastinating, I’m finally starting a blog. Why am I starting a blog? Couple reasons.
+&amp;#13; To clear my head. At this point in my life, I have a bunch of thoughts bouncing around in my head. Sure, I could tell them to my friends, but I’d rather share them with the world (well, whoever cares enough to read this). Who knows? Maybe this will start some good ol’ internet discussions.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="Opinions On Opinionated Autoformatters" property="og:title">
+  <title>Opinions On Opinionated Autoformatters</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Opinions On Opinionated Autoformatters</h1>
+        <h2 class="subtitle is-6">September 28, 2018</h2>
+        
+        <div class="content">
+          <p>About three years ago, I was involved in the most heated argument I&rsquo;ve experienced thus far in my career. I wish I could say it was about something important with long-term consequences, like a decision about which data store or framework to use. Nope. It was about code formatting. Specifically, the argument was about tabs vs spaces in a spectacle that was a little too similar to a <a href="https://www.youtube.com/watch?v=SsoOG6ZeyUI">scene from Silicon Valley</a>.</p>
+
+<p>Everyone I&rsquo;ve worked with agrees that code should follow a consistent style. It&rsquo;s easy to set up a linter that will fail your CI build when these styles aren&rsquo;t being followed. But standard linters fail to accomplish two things that I&rsquo;ve always viewed as necessary evils when programming with a team: deciding on styles, and following them.</p>
+
+<p>My world was rocked when my team started using <a href="https://prettier.io/">Prettier</a>. Prettier is an <strong>opinionated code formatter</strong>. It automatically formats your code based on styles that the creators of the tool have decided upon.</p>
+
+<p></p>
+
+<h2 id="deciding-on-formatting-rules">Deciding on formatting rules</h2>
+
+<p>ESLint has 92 configurable rules for <a href="https://eslint.org/docs/rules/#stylistic-issues">stylistic issues</a>, each with a number of options you can choose from. The number of permutations this provides is an immensely huge number that I don&rsquo;t feel like calculating.</p>
+
+<p>Prettier, on the other hand, tries to <a href="https://prettier.io/docs/en/option-philosophy.html">&ldquo;stop all the on-going debates over styles&rdquo;</a> by making most of these decisions for you. There are still some <a href="https://prettier.io/docs/en/options.html">configurable options</a>, but they&rsquo;re pretty much limited to big decisions that people tend to really care about. It won&rsquo;t stop the tabs vs spaces debate, but it will eliminate a number of petty arguments.</p>
+
+<p>I used to care about which formatting rules my team followed. I&rsquo;ve since stopped giving a shit. As long as the whole team is following a consistent style, who the hell cares what that style is? I&rsquo;d rather spend less time deciding on configuration and more time writing actual code.</p>
+
+<h2 id="making-code-follow-the-rules">Making code follow the rules</h2>
+
+<p>I don&rsquo;t want to know how much time I&rsquo;ve spent over the years making my code follow a set of formatting rules. Formatting a block of code is usually quick, but those seconds really add up over time and add a small bit of cognitive load while programming. Some linters have a command that will automatically fix your code, but you still have to remember to run it (or do something like set up a Git hook). I can&rsquo;t tell you how many commits at my last job just read &ldquo;fucking pylint&rdquo; and consisted entirely of spacing and indentation changes.</p>
+
+<p>An autoformatter, on the other hand, will integrate with your editor and <strong>format your code when you save it</strong>. Being able to stop thinking about how code is formatted is a breath of fresh air. The feeling of pasting code and watching it instantly get styled is rivaled only by taking that first bite of a burrito with extra guac.</p>
+
+<p>Another underrated benefit of using an autoformatter is that you can tell immediately upon saving whether your code will compile. This is especially nifty when working with JSX. If I&rsquo;ve hit CMD+S and don&rsquo;t see anything get reformatted, I know I&rsquo;ve probably left off a curly brace somewhere. This is a much more obvious visual than a red squiggly line that may or may not be anywhere near my cursor.</p>
+
+<h2 id="other-tools">Other tools</h2>
+
+<p>I&rsquo;ve mostly been talking about Prettier because it&rsquo;s the first opinionated autoformatter I&rsquo;ve used and it supports <a href="https://prettier.io/docs/en/language-support.html">a number of languages</a>. I&rsquo;ve tried to embrace similar tools no matter what language I&rsquo;m using. When I write Python, you bet I&rsquo;m using <a href="https://pypi.org/project/autopep8/">autopep8</a>! One of the things I love about Go is that <a href="https://golang.org/cmd/gofmt/">gofmt</a> is included with the language instead of being a third-party project. Back in 2013, <a href="https://blog.golang.org/go-fmt-your-code">70% of Go packages were formatted using gofmt&rsquo;s rules</a>, and it&rsquo;s probably a higher percentage today. This provides the added advantage of making code more approachable across the Go ecosystem.</p>
+
+<p>Code formatting is something I used to view as a necessary evil, but now it&rsquo;s something I rarely think about. I wonder what other tasks we spend our time on every day that will fade into the background in a few years.</p>
+
+<p><em>Note: This post applies only to <strong>stylistic</strong> issues that don&rsquo;t affect the abstract syntax tree. Most linters have rules that deal with AST changes (for example, scoping issues or unused variables), and I think it&rsquo;s great to keep a linter around to catch these types of things that can&rsquo;t automatically be fixed.</em></p>
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>

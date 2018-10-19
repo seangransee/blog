@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta content="" name="keywords">
+  <meta content="Returning Arrays in GraphQL - Simple Lists vs Relay-style pagination" property="og:title">
+  <title>Returning Arrays in GraphQL - Simple Lists vs Relay-style pagination</title>
+  <link rel="stylesheet" href="https://blog.seangransee.com/css/style.css">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.min.css">
+</head>
+
+  <body>
+    <section class="section header">
+  <div class="container">
+    <nav class="nav">
+      <div class="nav-left">
+        <a class="nav-item" href="https://blog.seangransee.com"><h1 class="title is-4">Sean Gransee</h1></a>
+      </div>
+      <div class="nav-right">
+        <nav class="nav-item level is-mobile">
+          
+          <a class="level-item" href="https://github.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-github"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://twitter.com/seangransee">
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="https://www.instagram.com/seangransee/">
+            <span class="icon">
+              <i class="fa fa-instagram"></i>
+            </span>
+          </a>
+          
+          <a class="level-item" href="mailto:sean.gransee@gmail.com">
+            <span class="icon">
+              <i class="fa fa-envelope"></i>
+            </span>
+          </a>
+          
+        </nav>
+      </div>
+    </nav>
+  </div>
+</section>
+
+    <section class="section">
+      <div class="container">
+        <h1 class="title">Returning Arrays in GraphQL - Simple Lists vs Relay-style pagination</h1>
+        <h2 class="subtitle is-6">October 18, 2018</h2>
+        
+        <div class="content">
+          
+
+<p><em>This is part of a series about <a href="/2018/10/decisions-my-team-made-with-our-graphql-schema/">decisions my team made with our GraphQL schema</a>. Check out that post for context, or to read about other decisions we made.</em></p>
+
+<p>For fields that could potentially return a huge set of data, returning the entire result set in an array just doesn&rsquo;t cut it. We have one field that returns time series data scoped to a time range, and that field could potentially return millions of results when scoped to a large enough time range. We definitely didn&rsquo;t want to have our API return <em>all</em> results in this instance, so we needed a way to paginate the results. The GraphQL docs suggest a <a href="https://graphql.org/learn/pagination/#pagination-and-edges">way to paginate results</a>, which seemed perfect for having our application request data in smaller chunks and presenting it with infinite scroll. This type of field is often referred to as a <a href="https://facebook.github.io/relay/graphql/connections.htm">Relay-style connection</a> and is supported out of the box by a number of GraphQL client and server libraries.</p>
+
+<p>Doing this allowed us to write some queries that look something like this to fetch data 250 records at a time:</p>
+
+<pre>
+<code class="language-graphql">
+# This query can be used to populate an infinitely scrolling list in a UI
+{
+  country(name: "United States") {
+    cities(first: 250, after: "Y3Vyc29yMQ==") {
+      totalCount # Knowing the total count is useful for controlling size of scrollbar
+      edges {
+        node {
+          name
+        }
+        cursor
+      }
+      pageInfo {
+        endCursor # allows us to query for the next page
+        hasNextPage # tells us when to stop making more requests
+      }
+    }
+  }
+}
+</code>
+</pre>
+
+<p>This works great for fields that can return huge result sets.</p>
+
+<p>In order to maintain consistency, we started by making <em>all</em> of our plural fields return a Relay-style connection. With that approach, something that could have been queried like this&hellip;</p>
+
+<pre>
+<code class="language-graphql">
+{
+  currentUser {
+    friends {
+      name
+    }
+  }
+}
+</code>
+</pre>
+
+<p>&hellip; now had to be queried like this &hellip;</p>
+
+<pre>
+<code class="language-graphql">
+{
+  currentUser {
+    friends {
+      edges {
+        node {
+          name
+        }
+      }
+    }
+  }
+}
+</code>
+</pre>
+
+<p>This quickly became a huge pain in the ass. We added flexibility at the expense of increased verbosity. The increased complexity of this solution made our queries more difficult to write and our responses more difficult to parse. What used to be a simple <code>map()</code> now required delving into two additional levels of nesting to pull out the data. Any time I <em>didn&rsquo;t</em> want to paginate my results (which was the vast majority of the time), I found myself thinking <strong>&ldquo;I just want a simple array, dammit!&rdquo;</strong></p>
+
+<p>Our solution? Implement both patterns, as needed. For fields that will never return a huge set of data, we use the <a href="https://graphql.org/learn/pagination/#plurals">simple array pattern</a>. For fields that will always return a huge set of data, we use the <a href="https://graphql.org/learn/pagination/#complete-connection-model">Relay connection pattern</a> and suffix the field name with &ldquo;Connection&rdquo;. (For example, <code>usersConnection</code>.) For fields that are ambiguous, we provide both in our API. This leaves us with something like this, where we can query for all users at once, or just a certain chunk:</p>
+
+<h3 id="schema">Schema</h3>
+
+<pre>
+<code class="language-graphql">
+type User {
+  id: ID!
+  name: String!
+}
+
+type UserConnection {
+  edges: [UserEdge]
+  pageInfo: PageInfo!
+  totalCount: Int!
+}
+
+type UserEdge {
+  cursor: String!
+  node: User
+}
+
+type PageInfo {
+  endCursor: String
+  hasNextPage: Boolean!
+  hasPreviousPage: Boolean!
+  startCursor: String
+}
+
+type Query {
+  # returns a single User
+  user(id: ID!): User
+
+  # returns a simple array of Users
+  users(ids: [ID!]): [User!]!
+
+  # returns a connection that you can paginate through
+  usersConnection(
+    first: Int
+    after: String
+    last: Int
+    before: String
+  ): UserConnection!
+}
+</code>
+</pre>
+
+<h3 id="request">Request</h3>
+
+<pre>
+<code class="language-graphql">
+{
+  # Get all users
+  users {
+    name
+  }
+
+  # Get only 2 users
+  usersConnection(first: 2) {
+    edges {
+      node {
+        name
+      }
+    }
+    pageInfo {
+      endCursor # start here when getting next page
+    }
+  }
+}
+</code>
+</pre>
+
+<h3 id="response">Response</h3>
+
+<pre>
+<code class="language-json">
+{
+  "data": {
+    "users": [
+      {
+        "name": "Michael Scott"
+      },
+      {
+        "name": "Jim Halpert"
+      },
+      {
+        "name": "Pam Beesly"
+      },
+      {
+        "name": "Dwight Schrute"
+      }
+    ],
+    "usersConnection": {
+      "edges": [
+        {
+          "node": {
+            "name": "Michael Scott"
+          }
+        },
+        {
+          "node": {
+            "name": "Jim Halpert"
+          }
+        }
+      ],
+      "pageInfo": {
+        "endCursor": "Y3Vyc29yMQ=="
+      }
+    }
+  }
+}
+</code>
+</pre>
+
+<p>You might look at that schema and think it looks scary. I did too at first! If you have a lot of different types that you want to paginate through, you&rsquo;ll end up with a ton of nearly-identical Connection and Edge types that inflate the size of your schema.</p>
+
+<p>I used to look at this and fret about making my schema too big, but then I came to the realization that it doesn&rsquo;t really matter. Nobody is going to read your schema top-to-bottom. Your server-side GraphQL library probably has an abstraction that generates all these Connection types for you and handles the pagination logic so you don&rsquo;t have to reinvent the wheel. (We use Ruby&rsquo;s <code>graphql</code> gem, which <a href="http://graphql-ruby.org/relay/connections.html">handles this perfectly</a>.) Our schema file is currently 938 lines, and the size of our schema hasn&rsquo;t been a problem whatsoever.</p>
+
+<p>It&rsquo;s okay to provide both a simple <em>and</em> and a flexible way of requesting the same set of data. You can have the best of both worlds with a minimal cost.</p>
+
+        </div>
+      </div>
+    </section>
+    
+<section class="section">
+  <div class="container">
+    <aside><div id="disqus_thread"></div></aside>
+    <script type="text/javascript">
+      var disqus_shortname = 'seangransee';
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+
+
+    <section class="section">
+  <div class="container has-text-centered">
+    <p></p>
+  </div>
+</section>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/prism.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-bash.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-yaml.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-graphql.min.js"></script>
+
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/components/prism-json.min.js"></script>
+
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-1016807-11', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+
+  </body>
+</html>
