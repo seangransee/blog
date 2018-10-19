@@ -1,5 +1,5 @@
 ---
-title: "Graphql Array vs Relay"
+title: "Returning Arrays in GraphQL - Simple Lists vs Relay-style pagination"
 date: 2018-10-08T19:52:14-05:00
 draft: true
 ---
@@ -65,7 +65,7 @@ In order to maintain consistency, we started by making _all_ of our plural field
 </code>
 </pre>
 
-This quickly became a huge pain in the ass. We added flexibility at the expense of increased verbosity. The increased complexity of this solution made our queries more difficult to write and our responses more difficult to iterate through. What used to be a simple `map()` now required delving into two additional levels of nesting to pull out the data. Any time I _didn't_ want to paginate my results (which was the vast majority of the time), I found myself thinking **"I just want a simple array, dammit!"**
+This quickly became a huge pain in the ass. We added flexibility at the expense of increased verbosity. The increased complexity of this solution made our queries more difficult to write and our responses more difficult to parse. What used to be a simple `map()` now required delving into two additional levels of nesting to pull out the data. Any time I _didn't_ want to paginate my results (which was the vast majority of the time), I found myself thinking **"I just want a simple array, dammit!"**
 
 Our solution? Implement both patterns, as needed. For fields that will never return a huge set of data, we use the [simple array pattern](https://graphql.org/learn/pagination/#plurals). For fields that will always return a huge set of data, we use the [Relay connection pattern](https://graphql.org/learn/pagination/#complete-connection-model) and suffix the field name with "Connection". (For example, `usersConnection`.) For fields that are ambiguous, we provide both in our API. This leaves us with something like this, where we can query for all users at once, or just a certain chunk:
 
@@ -183,6 +183,6 @@ type Query {
 
 You might look at that schema and think it looks scary. I did too at first! If you have a lot of different types that you want to paginate through, you'll end up with a ton of nearly-identical Connection and Edge types that inflate the size of your schema.
 
-I used to look at this and fret about making my schema too big, but then I came to the realization that it doesn't really matter. Nobody is going to read your schema top-to-bottom. Your server-side GraphQL library probably has an abstraction that generates all these Connection types for you and handles the pagination logic so you don't have to reinvent the wheel. (We use Ruby's `graphql` gem, which [handles this perfectly](http://graphql-ruby.org/relay/connections.html).) Our schema is currently 938 lines, and the size of our schema hasn't been a problem whatsoever.
+I used to look at this and fret about making my schema too big, but then I came to the realization that it doesn't really matter. Nobody is going to read your schema top-to-bottom. Your server-side GraphQL library probably has an abstraction that generates all these Connection types for you and handles the pagination logic so you don't have to reinvent the wheel. (We use Ruby's `graphql` gem, which [handles this perfectly](http://graphql-ruby.org/relay/connections.html).) Our schema file is currently 938 lines, and the size of our schema hasn't been a problem whatsoever.
 
 It's okay to provide both a simple _and_ and a flexible way of requesting the same set of data. You can have the best of both worlds with a minimal cost.

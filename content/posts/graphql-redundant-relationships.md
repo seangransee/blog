@@ -1,5 +1,5 @@
 ---
-title: "Graphql Redundant Relationships"
+title: Redundant "Through" Relationships in GraphQL
 date: 2018-10-08T19:53:39-05:00
 draft: true
 ---
@@ -129,4 +129,4 @@ type User {
 </code>
 </pre>
 
-Our API includes these redundant relationships wherever possible. There's a tiny bit of overhead in the server-side codebase to maintain all these relationships, but the ease of being able to go to any relationship in one "hop" more than makes up for it. I'd recommend that anyone building a GraphQL API at least consider this tradeoff and decide for themselves whether it's worth it.
+Our API includes these redundant "through" relationships wherever possible. There's a tiny bit of overhead in the server-side codebase to maintain all these relationships, but the ease of being able to go to any relationship in one "hop" more than makes up for it. I'd recommend that anyone building a GraphQL API at least consider this tradeoff and decide for themselves whether it's worth it.

@@ -1,12 +1,12 @@
 ---
-title: "Singular Plural Fields Graphql"
+title: "Singular and Plural Fields in GraphQL"
 date: 2018-10-08T19:50:24-05:00
 draft: true
 ---
 
 _This is part of a series about [decisions my team and I made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
 
-Pretty much every API needs to support the access pattern where you need to be able to query for a single **user**, and you also need to query for multiple **users**. (Replace "user" with any type of data your application represents.) I played around with a few ways to handle this, and ended up putting both a singluar and a plural field of the same type at the same level of the schema. The singular field has a required primary key argument and is used to find a specific record. The plural field returns all records of that type by default, but includes an optional argument that can be used to filter the results. Here's an example with a `User` type:
+Pretty much every API needs to support an access pattern where you need to be able to query for a single **user**, and you also need to query for multiple **users**. (Replace "user" with any type of data your application models.) I played around with a few ways to handle this, and ended up putting both a singluar and a plural field of the same type at the same level of the schema. The singular field has a required primary key argument and is used to look up a specific record. The plural field returns all records of that type by default, but includes an optional argument that can be used to filter the results. Here's an example with a `User` type:
 
 ### Schema
 

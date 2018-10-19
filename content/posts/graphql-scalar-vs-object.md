@@ -36,7 +36,7 @@ type Room {
 </code>
 </pre>
 
-This works great as long as the name of the floor is the only information you'll ever have about your floor. But what happens when you need something like an image of the floor plan, or an index so you can sort the floors in the order that they'd appear in an elevator? It might get to the point where it makes more sense to have a dedicated `Floor` object type.
+This works great as long as the _name_ of the floor is the only information you'll ever have about your floor. But what happens when you need something like an image of the floor plan, or an index so you can sort the floors in the order that they'd appear in an elevator? It might get to the point where it makes more sense to have a dedicated `Floor` object type.
 
 But then how do you access that new `Floor` object from your `Room` object? The `floor` field is already taken, and it's just used to display the _name_ of the floor. That field currently returns a string, and you can't define it to return your new `Floor` object type without making a [breaking change]({{< relref "graphql-breaking-changes.md" >}}). You'll have to make a new awkwardly-named field, such as `floorInfo`, and your schema will end up looking like this.
 
