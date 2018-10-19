@@ -1,8 +1,9 @@
 ---
 title: "Returning Arrays in GraphQL - Simple Lists vs Relay-style pagination"
-date: 2018-10-08T19:52:14-05:00
-draft: true
+date: 2018-10-18T19:52:14-05:00
 ---
+
+_This is part of a series about [decisions my team made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
 
 For fields that could potentially return a huge set of data, returning the entire result set in an array just doesn't cut it. We have one field that returns time series data scoped to a time range, and that field could potentially return millions of results when scoped to a large enough time range. We definitely didn't want to have our API return _all_ results in this instance, so we needed a way to paginate the results. The GraphQL docs suggest a [way to paginate results](https://graphql.org/learn/pagination/#pagination-and-edges), which seemed perfect for having our application request data in smaller chunks and presenting it with infinite scroll. This type of field is often referred to as a [Relay-style connection](https://facebook.github.io/relay/graphql/connections.htm) and is supported out of the box by a number of GraphQL client and server libraries.
 

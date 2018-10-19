@@ -1,10 +1,9 @@
 ---
 title: "The Issue With GraphQL Field Names That Aren't Descriptive Enough"
-date: 2018-10-08T19:58:30-05:00
-draft: true
+date: 2018-10-18T19:58:30-05:00
 ---
 
-_This is part of a series about [decisions my team and I made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
+_This is part of a series about [decisions my team made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
 
 One of the bad decisions we made when building our schema was defining a scalar field with a name that would likely be used in the future by a full object.
 

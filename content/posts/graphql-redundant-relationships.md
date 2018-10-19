@@ -1,10 +1,9 @@
 ---
 title: Redundant "Through" Relationships in GraphQL
-date: 2018-10-08T19:53:39-05:00
-draft: true
+date: 2018-10-18T19:53:39-05:00
 ---
 
-_This is part of a series about [decisions my team and I made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
+_This is part of a series about [decisions my team made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
 
 Let's say you're modeling the users in a set of companies. Each company has offices scattered across multiple cities, each of which is split into departments that contain a collection of users. It might be tempting to model your schema like this to keep it lean:
 

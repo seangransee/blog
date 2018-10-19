@@ -1,10 +1,9 @@
 ---
 title: "Breaking Changes in GraphQL with Zero Downtime"
-date: 2018-10-08T19:54:19-05:00
-draft: true
+date: 2018-10-18T19:54:19-05:00
 ---
 
-_This is part of a series about [decisions my team and I made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
+_This is part of a series about [decisions my team made with our GraphQL schema]({{< relref "graphql-decisions.md" >}}). Check out that post for context, or to read about other decisions we made._
 
 One of the core promises of GraphQL is that you can build an API [without versioning or breaking changes](https://graphql.org/learn/best-practices/#versioning). Breaking changes occur when a field gets removed or its return type gets modified. In a perfect world, you'd continue adding fields and types as your API evolves without ever needing to remove or modify anything.
 

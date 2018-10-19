@@ -1,7 +1,6 @@
 ---
-title: "Decisions We Made With Our GraphQL Schema"
-date: 2018-10-08T09:12:02-05:00
-draft: true
+title: "Decisions My Team Made With Our GraphQL Schema"
+date: 2018-10-18T09:12:02-05:00
 ---
 
 I love GraphQL. Since deploying our initial GraphQL API at [SwipeSense](https://www.swipesense.com/), the speed at which we've been able to build new capabilities into our applications has been unparalleled by any REST-based system I've worked with.
